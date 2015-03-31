@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>45CEF441-ADB1-4CF3-A670-784EC97E76B6</string>
+	<string>FF2E6B47-507C-446D-B8E1-2BF9F3736DEA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>提醒精灵1.0</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>06D563D0-24C3-4A9D-83B6-C00A2C2E323F</key>
-		<string>https://github.com/MobileSprite/PROJECT.git</string>
+		<key>C50CE50E-05E6-40B0-932D-EF8B32C78D96</key>
+		<string>https://github.com/MobileSprite/project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>提醒精灵1.0.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>06D563D0-24C3-4A9D-83B6-C00A2C2E323F</key>
+		<key>C50CE50E-05E6-40B0-932D-EF8B32C78D96</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/MobileSprite/PROJECT.git</string>
+	<string>https://github.com/MobileSprite/project.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>06D563D0-24C3-4A9D-83B6-C00A2C2E323F</string>
+	<string>C50CE50E-05E6-40B0-932D-EF8B32C78D96</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>06D563D0-24C3-4A9D-83B6-C00A2C2E323F</string>
+			<string>C50CE50E-05E6-40B0-932D-EF8B32C78D96</string>
 			<key>IDESourceControlWCCName</key>
-			<string>PROJECT</string>
+			<string>project</string>
 		</dict>
 	</array>
 </dict>

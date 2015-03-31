@@ -421,6 +421,13 @@
         
         NSLog(@"确定返回");
         
+//        NSString *fullPath = [NSString alloc]
+        
+#pragma warn ------------删除当前账号的信息
+        NSError *error;
+        [[NSFileManager defaultManager]removeItemAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"] error:&error];
+        
+        
     }
     
 }

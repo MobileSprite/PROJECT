@@ -293,29 +293,33 @@
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-/*
+
 #pragma mark countTime
     
-    UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
-    
-    UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[2];
-    
-    xViewController *xVController =(xViewController *)navigationC.topViewController;
-    
-//    NSLog(@"%@",rootVc.notification.fireDate);
-    
-    //不关闭进入后台
-    
-    if (xVController.timer!=nil)
+    if ([[NSFileManager defaultManager]fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"]])
     {
-        [xVController.timer invalidate];
-        xVController.timer=nil;
+        UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
         
-        date1 =[NSDate date];
+        UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[2];
         
+        xViewController *xVController =(xViewController *)navigationC.topViewController;
+        
+        //    NSLog(@"%@",rootVc.notification.fireDate);
+        
+        //不关闭进入后台
+        
+        if (xVController.timer!=nil)
+        {
+            [xVController.timer invalidate];
+            xVController.timer=nil;
+            
+            date1 =[NSDate date];
+            
+        }
     }
+
      
-    */
+    
 
     
 }
@@ -351,52 +355,58 @@
 
 
     
-    /*
-
-    UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
-    
+    if ([[NSFileManager defaultManager]fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"]])
+    {
+        
 #pragma mark countTime
-    
-    UINavigationController *navigationC2 = (UINavigationController *) tabViewC.viewControllers[2];
-    
-    xViewController *xVController =(xViewController *)navigationC2.topViewController;
+        
+        UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
 
-    
-    if (date1 !=nil) {
+        UINavigationController *navigationC2 = (UINavigationController *) tabViewC.viewControllers[2];
+        
+        xViewController *xVController =(xViewController *)navigationC2.topViewController;
         
         
-        NSTimeInterval  interval =[[NSDate date] timeIntervalSinceDate:date1];
-        NSLog(@"%f间隔",interval);
-        
-        
-        xVController.totlaTime =xVController.totlaTime - interval;
-        xVController.timerLable.tag  =xVController.totlaTime;
-        
-        [xVController  reStart];
-        
-        date1=nil;
-        
-        if (xVController.arcBgView.layer.sublayers.count>=2) {
+        if (date1 !=nil) {
             
-            [[xVController.arcBgView.layer.sublayers lastObject]removeFromSuperlayer];
             
+            NSTimeInterval  interval =[[NSDate date] timeIntervalSinceDate:date1];
+            NSLog(@"%f间隔",interval);
+            
+            
+            xVController.totlaTime =xVController.totlaTime - interval;
+            xVController.timerLable.tag  =xVController.totlaTime;
+            
+            [xVController  reStart];
+            
+            date1=nil;
+            
+            if (xVController.arcBgView.layer.sublayers.count>=2) {
+                
+                [[xVController.arcBgView.layer.sublayers lastObject]removeFromSuperlayer];
+                
+            }
+            
+            [xVController drawRound];
+            
+            xVController.arcBgView.alpha =1;
         }
         
-        [xVController drawRound];
+        UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[0];
         
-        xVController.arcBgView.alpha =1;
+        ProgramViewController *rootVc =(ProgramViewController *)navigationC.topViewController;
+        
+        rootVc.canReload = YES;
+        
+        [rootVc.tabelView reloadData];
+        
     }
-    
-    UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[0];
-    
-    ProgramViewController *rootVc =(ProgramViewController *)navigationC.topViewController;
-    
-    rootVc.canReload = YES;
-    [rootVc.tabelView reloadData];
+
+
      
    
 
-     */
+    
     
 }
 
