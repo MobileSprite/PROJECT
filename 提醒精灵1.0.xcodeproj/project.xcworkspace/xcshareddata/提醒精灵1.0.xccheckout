@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>B797F19B-2AA3-4AB2-A870-4D54B7F4B78B</string>
+=======
+	<string>FF2E6B47-507C-446D-B8E1-2BF9F3736DEA</string>
+>>>>>>> wrcj
 	<key>IDESourceControlProjectName</key>
 	<string>提醒精灵1.0</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
