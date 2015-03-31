@@ -80,87 +80,25 @@
     {
 #pragma mark - 解决未去处理的事件事件，修改其值
         
-        NSArray *array = [EventDataTool allremainModel];
-        
-        for (remainModel *model in array)
+        if ([[NSFileManager defaultManager]fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"]])
         {
-            if ([model.date compare:[NSDate dateWithTimeIntervalSinceNow:10]]<0 && model.timesNum == 1)
+            NSArray *array = [EventDataTool allremainModel];
+            
+            for (remainModel *model in array)
             {
-                model.New = 0;
-                model.handOff = YES;
-                
-                [EventDataTool modifyDBModel:model];
-                
-            }
-        }
-        
-    }
-    
-
-    
-
-    /*
-
-#pragma mark countTime
-    UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
-
-    
-    self.noteNumber = 1;
-    
-    delay = NO;
-    
-    
-
-    if (launchOptions !=nil)
-    {
-        Appnote =  launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
-        
-        NSDictionary *noteDic = Appnote.userInfo;
-        
-//        musicName = [NSString stringWithString:noteDic[theMusic]];
-        musicName = Appnote.soundName;
-        
-        self.noteNumber = theNoteNum +1;
-
-        NSMutableString *string = [NSMutableString stringWithFormat:@"%@-%@",noteDic,noteDic[theText]];
-        
-            for (UILocalNotification * oldNote in [UIApplication sharedApplication].scheduledLocalNotifications)
-            {
-                
-                NSDictionary * oldDic = oldNote.userInfo;
-                
-                if ([noteDic[theIdenity]isEqualToString:oldDic[theIdenity]])
+                if ([model.date compare:[NSDate dateWithTimeIntervalSinceNow:10]]<0 && model.timesNum == 1)
                 {
-                    if ([oldDic[theTimesNum]intValue] == 0)
-                    {
-    
-                        [[UIApplication sharedApplication] cancelLocalNotification:oldNote];
-                        
-                    }
+                    model.New = 0;
+                    model.handOff = YES;
+                    
+                    [EventDataTool modifyDBModel:model];
+                    
                 }
             }
-
-
-        UIAlertView *alertNote =[[UIAlertView alloc]initWithTitle:@"提醒" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        
-        [alertNote show];
-        
-    }else
-    {
-        
-        UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[0];
-        
-        ProgramViewController *rootVc =(ProgramViewController *)navigationC.topViewController;
-        
-        rootVc.canReload = YES;
-        [rootVc.tabelView reloadData];
+        }
     }
     
-#pragma mark countTime
- 
     
-    
-     */
 
     return YES;
 }
@@ -170,7 +108,6 @@
     UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
 
  
-//    tabViewC.tabBarItem.title=@"ssss";
     NSDictionary *noteDic = notification.userInfo;
     
     
@@ -267,22 +204,9 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    
-    
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
-    
-#pragma mark countTime
-    /*
-    
-    self.noteNumber = 1;
-    
-    delay = NO;
-     
-     */
-
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+ 
 }
 
 
@@ -290,9 +214,7 @@
 {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
-    
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
 
 #pragma mark countTime
     
@@ -326,7 +248,6 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
 #pragma mark 只通过点击app图标启动-
     if (application.scheduledLocalNotifications.count != noteCount)
@@ -351,7 +272,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
 
     
@@ -412,10 +332,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
 
-    //[xController cancleNote];
     
 
 }
@@ -454,8 +372,9 @@
 
         UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[1];
         
-//        ProgramViewController *rootVc =(ProgramViewController *)navigationC.topViewController;
 #warning ----dateCount update----------
+        
+        NSLog(@"------------1002----------");
         
     }
     
@@ -469,22 +388,6 @@
     
 }
 
-#pragma mark - countTime
-
-/*
--(void)makeDelay:(NSTimer *)timer
-{
-//    UILocalNotification * notification = (UILocalNotification *)timer.userInfo;
-    
-//    NSDictionary * noteDic = notification.userInfo;
-    
-    self.noteNumber = 1;
-    
-    delay = NO;
-
-}
- 
- */
 
 
 @end
