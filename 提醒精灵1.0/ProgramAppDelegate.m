@@ -15,11 +15,16 @@
 
 #import "SwitchControllerTool.h"
 
+#import "EventDataTool.h"
+#import "remainModel.h"
 
 @interface ProgramAppDelegate ()
 {
     NSDate *date1;
     NSDate *date2;
+    
+    NSUInteger noteCount;
+    
 }
 
 
@@ -37,16 +42,17 @@
 //    self.window.rootViewController = logViewController;
     
     
-    
-
-    
     [SwitchControllerTool chooseRootViewController];
+    
+    noteCount = [application scheduledLocalNotifications].count;
     
     if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey])
     {
         UILocalNotification *localNote = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
         
         NSDictionary *noteDic = localNote.userInfo;
+        
+        [MyAudioTool playSound:noteDic[theMusic]];
         
         if ([noteDic[RemaindIdenity] isEqualToString:@"message"])
         {
@@ -60,10 +66,39 @@
             
             [rootVc.tabelView reloadData];
             
+            NSString *string = [NSString stringWithFormat:@"%@",noteDic[theText]];
+            
+            UIAlertView *alertNote = [[UIAlertView alloc]initWithTitle:@"提醒" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            
+            alertNote.tag = 1111;
+            
+            [alertNote show];
+            
+        }
+        
+    }else
+    {
+#pragma mark - 解决未去处理的事件事件，修改其值
+        
+        NSArray *array = [EventDataTool allremainModel];
+        
+        for (remainModel *model in array)
+        {
+            if ([model.date compare:[NSDate dateWithTimeIntervalSinceNow:10]]<0 && model.timesNum == 1)
+            {
+                model.New = 0;
+                model.handOff = YES;
+                
+                [EventDataTool modifyDBModel:model];
+                
+            }
         }
         
     }
     
+
+    
+
     /*
 
 #pragma mark countTime
@@ -253,6 +288,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -287,6 +323,26 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+#pragma mark 只通过点击app图标启动-
+    if (application.scheduledLocalNotifications.count != noteCount)
+    {
+        NSArray *array = [EventDataTool allremainModel];
+        
+        for (remainModel *model in array)
+        {
+            if ([model.date compare:[NSDate dateWithTimeIntervalSinceNow:10]]<0 && model.timesNum == 1)
+            {
+                model.New = 0;
+                model.handOff = YES;
+                
+                [EventDataTool modifyDBModel:model];
+                
+            }
+        }
+    }
+
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -385,7 +441,7 @@
     if (alertView.tag == 1002)
     {
         UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
-        
+
         UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[1];
         
 //        ProgramViewController *rootVc =(ProgramViewController *)navigationC.topViewController;

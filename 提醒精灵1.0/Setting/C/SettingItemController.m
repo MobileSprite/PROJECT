@@ -417,7 +417,10 @@
         
         [UIApplication sharedApplication].delegate.window.rootViewController = logVc; /// 这句话在其他VC也可以用
         
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
         NSLog(@"确定返回");
+        
     }
     
 }
