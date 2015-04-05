@@ -7,47 +7,86 @@
 //
 
 #import "AppCommend.h"
+#import "appModel.h"
+#import "appView.h"
 
 @interface AppCommend ()
+@property(nonatomic,strong)NSArray *apps;
 
 @end
 
 @implementation AppCommend
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    int totalCol =3;
+    float appW =80;
+    float appH =80;
+    CGFloat marginX =(self.view.frame.size.width -totalCol *appW)/(totalCol+1);
+    CGFloat marginY=15;
+    for (int i =0; i<self.apps.count; i++) {
+    
+        appView *app =[appView appViewWithAppModel:self.apps[i] ];
+
+    
+        
+//        app.backgroundColor =[UIColor redColor];
+        [self.view addSubview:app];
+        
+        int row =i/totalCol;
+        int col =i%totalCol;
+
+        
+        CGFloat appX = marginX + col * (appW + marginX);
+        CGFloat appY = 90 + row * (appH + marginY);
+       
+        app.frame = CGRectMake(appX, appY, appW, appH);
+
+        app.app = self.apps[i];
+        
+        UIButton *Btn =[app subviews][0];
+        
+        [Btn addTarget:self action:@selector(appBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+    
+    }
     
     
-    /**
-     *  AppStore open App
-     */
-    
-    /*
-     
-     NSString *stringURL =
-     @"itms://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=467566074&mt=8";
-     NSURL *url = [NSURL
-     URLWithString:stringURL];
-     ［UIApplication sharedApplication] openURL:url];
-     
-     */
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(NSArray *)apps
+{
+    if (_apps==nil) {
+        
+        NSString*path=[[NSBundle mainBundle]pathForResource:@"app.plist" ofType:nil];
+        NSArray *arr =[NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *nuArr =[NSMutableArray array];
+        for (NSDictionary *dic in arr) {
+            
+            appModel *model =[appModel appWithDic:dic];
+            [nuArr addObject:model];
+        }
+        _apps =nuArr;
+        
+        
+    }
+    return _apps;
+}
+-(void)appBtnPressed:(UIButton *)btn
+{
+    appView  *view=(appView*) btn.superview;
+    
+
+    NSLog(@"%@--被按下",view.app.name);
 }
 
 @end

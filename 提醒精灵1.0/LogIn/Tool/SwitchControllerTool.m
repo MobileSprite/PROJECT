@@ -12,6 +12,7 @@
 #import "CurrentToken.h"
 #import "AccessTokenTool.h"
 
+#import "xAppDelegate.h"
 #import "ModelDataTool.h"
 #import "DateModel.h"
 #import "remainModel.h"
@@ -33,6 +34,8 @@ typedef enum timeInterval{
 {
     CurrentToken *token = [AccessTokenTool getCurrentTokenFromFile];
     
+    
+    
     if (token)
     {
         NSLog(@"%@",token.current_access_token);
@@ -40,7 +43,10 @@ typedef enum timeInterval{
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         ProgramTabBarController *proVc = [story instantiateViewControllerWithIdentifier:@"mainController"];
-       
+        
+        
+        
+        
         [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
         
 #warning  根据表中的模型数据重新添加note-----

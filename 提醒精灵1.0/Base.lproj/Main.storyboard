@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -127,24 +127,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="事务提醒" id="gA7-fJ-Biu">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="GMq-KN-lUp">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eCu-tG-0NO" userLabel="Button-more">
-                                <rect key="frame" x="286" y="13" width="18" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="barbutton_nomal.png">
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="removeNote:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bks-xB-NZQ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="事务提醒" id="gA7-fJ-Biu"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="HeadView" destination="UbO-bY-icd" id="6o5-JQ-3Js"/>
@@ -181,7 +164,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Program Navigation View Controller - 倒数计-->
         <scene sceneID="f2m-Ft-cuN">
             <objects>
-                <navigationController definesPresentationContext="YES" id="JAr-Zz-eK6" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="countcontroller" definesPresentationContext="YES" id="JAr-Zz-eK6" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="倒数计" image="timer_s" id="xdG-HL-iDj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KD6-jT-PPK">
                         <autoresizingMask key="autoresizingMask"/>
@@ -550,10 +533,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vZ8-Ll-VNj">
-                                    <rect key="frame" x="5" y="13" width="310" height="37"/>
+                                    <rect key="frame" x="5" y="1" width="310" height="37"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.46844637049999999" green="0.63622111889999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Button">
+                                    <state key="normal" title="退出账号">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -577,7 +560,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="barbutton_nomal.png" width="35" height="34"/>
         <image name="calender_s" width="23" height="24"/>
         <image name="find_logout_qq_h.png" width="212" height="33"/>
         <image name="find_logout_qq_n.png" width="212" height="33"/>

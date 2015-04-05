@@ -12,16 +12,17 @@
 #import "Define.h"
 #import "MyAudioTool.h"
 #import "MusicModel.h"
-
+#import "ProgramTabBarController.h"
 #import "SwitchControllerTool.h"
 
 #import "EventDataTool.h"
 #import "remainModel.h"
 
-@interface ProgramAppDelegate ()
+@interface ProgramAppDelegate ()<xAppDelegate>
 {
     NSDate *date1;
     NSDate *date2;
+    BOOL isAlert;
     
     NSUInteger noteCount;
     
@@ -41,6 +42,8 @@
 //    [self.window makeKeyAndVisible];
 //    self.window.rootViewController = logViewController;
     
+    xViewController *controller =[[xViewController alloc]init];
+    controller.delegate =self;
     
     [SwitchControllerTool chooseRootViewController];
     
@@ -249,6 +252,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     
+    if (isAlert) {
+        [self SetController];
+    }
 #pragma mark 只通过点击app图标启动-
     if (application.scheduledLocalNotifications.count != noteCount)
     {
@@ -272,6 +278,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    
 
 
     
@@ -386,6 +393,15 @@
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     
+}
+-(void)SetController
+{
+    isAlert =YES;
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    ProgramTabBarController *proVc = [story instantiateViewControllerWithIdentifier:@"countcontroller"];
+    
+    [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
 }
 
 
