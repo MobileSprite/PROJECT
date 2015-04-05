@@ -9,6 +9,8 @@
 #import "xViewController.h"
 #import "CircleprocessVie.h"
 
+#import <Foundation/Foundation.h>
+
 @interface xViewController ()<UIAlertViewDelegate>
 {
     BOOL isPause;
@@ -32,7 +34,8 @@
     //self.view.backgroundColor =[UIColor grayColor];
     
     //设置button样式
-    
+     NSLog(@"superView==%@",self.view);
+   
     _pauseBtn.layer.cornerRadius =8;
     _cancleBtn.layer.cornerRadius =8;
     
@@ -114,6 +117,9 @@
          _timer =nil;
       //弹窗提示
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"警告" message:@"times up!!" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
+       
+        
+        [self.delegate SetController];
         [alert show];
         //取消note
         [self cancleNote];

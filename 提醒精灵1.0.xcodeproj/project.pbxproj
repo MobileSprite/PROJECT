@@ -156,8 +156,6 @@
 		51C53A7D1A8D938900C08CD2 /* CurrentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C53A7C1A8D938900C08CD2 /* CurrentToken.m */; };
 		51C82A7E19F21C280040D84E /* sbs.caf in Resources */ = {isa = PBXBuildFile; fileRef = 51C82A7D19F21C280040D84E /* sbs.caf */; };
 		51D25C851AA732160044A7B0 /* AboutAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D25C6D1AA732160044A7B0 /* AboutAuthor.m */; };
-		51D25C861AA732160044A7B0 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D25C711AA732160044A7B0 /* AppCommend.m */; };
-		51D25C871AA732160044A7B0 /* AppCommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D25C721AA732160044A7B0 /* AppCommend.xib */; };
 		51D25C891AA732160044A7B0 /* SettingItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D25C761AA732160044A7B0 /* SettingItemController.m */; };
 		51D25C8A1AA732160044A7B0 /* WRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D25C781AA732160044A7B0 /* WRViewController.m */; };
 		51D25C8B1AA732160044A7B0 /* SettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D25C7B1AA732160044A7B0 /* SettingGroup.m */; };
@@ -179,6 +177,11 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
+		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
+		91C851921ACAE70600D86758 /* AppCommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C8518B1ACAE70600D86758 /* AppCommend.xib */; };
+		91C851931ACAE70600D86758 /* appModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518D1ACAE70600D86758 /* appModel.m */; };
+		91C851941ACAE70600D86758 /* appView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518F1ACAE70600D86758 /* appView.m */; };
+		91C851951ACAE70600D86758 /* appView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C851901ACAE70600D86758 /* appView.xib */; };
 		91D5119F1AB0A4E500CDDFA8 /* groupbutton_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D5119C1AB0A4E500CDDFA8 /* groupbutton_disable@2x.png */; };
 		91D511A01AB0A4E500CDDFA8 /* groupbutton_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D5119D1AB0A4E500CDDFA8 /* groupbutton_highlight@2x.png */; };
 		91D511A11AB0A4E500CDDFA8 /* groupbutton_nomal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D5119E1AB0A4E500CDDFA8 /* groupbutton_nomal@2x.png */; };
@@ -413,9 +416,6 @@
 		51C82A7D19F21C280040D84E /* sbs.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sbs.caf; sourceTree = "<group>"; };
 		51D25C6C1AA732160044A7B0 /* AboutAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAuthor.h; sourceTree = "<group>"; };
 		51D25C6D1AA732160044A7B0 /* AboutAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAuthor.m; sourceTree = "<group>"; };
-		51D25C701AA732160044A7B0 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
-		51D25C711AA732160044A7B0 /* AppCommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommend.m; sourceTree = "<group>"; };
-		51D25C721AA732160044A7B0 /* AppCommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCommend.xib; sourceTree = "<group>"; };
 		51D25C751AA732160044A7B0 /* SettingItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingItemController.h; sourceTree = "<group>"; };
 		51D25C761AA732160044A7B0 /* SettingItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingItemController.m; sourceTree = "<group>"; };
 		51D25C771AA732160044A7B0 /* WRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRViewController.h; sourceTree = "<group>"; };
@@ -455,6 +455,14 @@
 		51FAA4671AA2CB5900123FDE /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		51FAA4761AA2CF7000123FDE /* EventDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTool.h; sourceTree = "<group>"; };
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
+		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
+		91C8518A1ACAE70600D86758 /* AppCommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommend.m; sourceTree = "<group>"; };
+		91C8518B1ACAE70600D86758 /* AppCommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCommend.xib; sourceTree = "<group>"; };
+		91C8518C1ACAE70600D86758 /* appModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appModel.h; sourceTree = "<group>"; };
+		91C8518D1ACAE70600D86758 /* appModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appModel.m; sourceTree = "<group>"; };
+		91C8518E1ACAE70600D86758 /* appView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appView.h; sourceTree = "<group>"; };
+		91C8518F1ACAE70600D86758 /* appView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appView.m; sourceTree = "<group>"; };
+		91C851901ACAE70600D86758 /* appView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = appView.xib; sourceTree = "<group>"; };
 		91D5119C1AB0A4E500CDDFA8 /* groupbutton_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupbutton_disable@2x.png"; sourceTree = "<group>"; };
 		91D5119D1AB0A4E500CDDFA8 /* groupbutton_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupbutton_highlight@2x.png"; sourceTree = "<group>"; };
 		91D5119E1AB0A4E500CDDFA8 /* groupbutton_nomal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupbutton_nomal@2x.png"; sourceTree = "<group>"; };
@@ -1073,19 +1081,9 @@
 		51D25C6E1AA732160044A7B0 /* AppCommend */ = {
 			isa = PBXGroup;
 			children = (
-				51D25C6F1AA732160044A7B0 /* Controller */,
+				91C851881ACAE70600D86758 /* Controller */,
 			);
 			path = AppCommend;
-			sourceTree = "<group>";
-		};
-		51D25C6F1AA732160044A7B0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				51D25C701AA732160044A7B0 /* AppCommend.h */,
-				51D25C711AA732160044A7B0 /* AppCommend.m */,
-				51D25C721AA732160044A7B0 /* AppCommend.xib */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		51D25C791AA732160044A7B0 /* M */ = {
@@ -1202,6 +1200,21 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		91C851881ACAE70600D86758 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				91C851891ACAE70600D86758 /* AppCommend.h */,
+				91C8518A1ACAE70600D86758 /* AppCommend.m */,
+				91C8518B1ACAE70600D86758 /* AppCommend.xib */,
+				91C8518C1ACAE70600D86758 /* appModel.h */,
+				91C8518D1ACAE70600D86758 /* appModel.m */,
+				91C8518E1ACAE70600D86758 /* appView.h */,
+				91C8518F1ACAE70600D86758 /* appView.m */,
+				91C851901ACAE70600D86758 /* appView.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1310,6 +1323,7 @@
 				51BA1BFC19F41E3A002F8BF1 /* once_icon@2x.png in Resources */,
 				515A68DE19E98236000FC00B /* 12.caf in Resources */,
 				515FD26D19F2CC3A00679CDC /* muiscbutton_highlight@2x.png in Resources */,
+				91C851951ACAE70600D86758 /* appView.xib in Resources */,
 				511CD4E919D4316C00A78DC6 /* MusicList.plist in Resources */,
 				517721F11A878E1F006BBC67 /* btn_startView_wechat_h.png in Resources */,
 				517721FB1A878E1F006BBC67 /* find_logout_renren_n.png in Resources */,
@@ -1344,12 +1358,12 @@
 				519584241A8CC37E003619EF /* MBProgressHUD.bundle in Resources */,
 				51F3757819F91D60006C508A /* nav_menu_icon@2x.png in Resources */,
 				51C53A761A8D828F00C08CD2 /* WRLogInViewController.xib in Resources */,
-				51D25C871AA732160044A7B0 /* AppCommend.xib in Resources */,
 				511EC1E519F145F1009A8339 /* check.png in Resources */,
 				511CD4EB19D43CFA00A78DC6 /* CountsList.plist in Resources */,
 				515A68D919E98236000FC00B /* 07.caf in Resources */,
 				517721FF1A878E1F006BBC67 /* find_logout_sina_n.png in Resources */,
 				510D95B919F6A025001A284F /* sms_nomal@2x.png in Resources */,
+				91C851921ACAE70600D86758 /* AppCommend.xib in Resources */,
 				5178E00519F1EABA008104F2 /* 4.png in Resources */,
 				515FD26919F2C56A00679CDC /* timebutton_nomal@2x.png in Resources */,
 				517721F91A878E1F006BBC67 /* find_logout_renren_h.png in Resources */,
@@ -1407,6 +1421,7 @@
 				51FAA4691AA2CB5900123FDE /* MusicModel.m in Sources */,
 				517CCAAB1A07778800F1092A /* NSDate+DateCount.m in Sources */,
 				517722051A878E1F006BBC67 /* MJType.m in Sources */,
+				91C851931ACAE70600D86758 /* appModel.m in Sources */,
 				517DBC441A81D6FA00C8A8B6 /* FMDatabaseAdditions.m in Sources */,
 				51C53A7A1A8D8CDB00C08CD2 /* AccessTokenTool.m in Sources */,
 				51D25C8D1AA732160044A7B0 /* HFStretchableTableHeaderView.m in Sources */,
@@ -1418,8 +1433,8 @@
 				517DBC481A81D6FA00C8A8B6 /* ModelDataTool.m in Sources */,
 				51FAA46B1AA2CB5900123FDE /* TimesModle.m in Sources */,
 				517CCAA91A07778800F1092A /* DateModel.m in Sources */,
-				51D25C861AA732160044A7B0 /* AppCommend.m in Sources */,
 				517721EA1A878E1F006BBC67 /* UIAlertView+AFNetworking.m in Sources */,
+				91C851911ACAE70600D86758 /* AppCommend.m in Sources */,
 				519584231A8CC37E003619EF /* MBProgressHUD+MJ.m in Sources */,
 				51C53A7D1A8D938900C08CD2 /* CurrentToken.m in Sources */,
 				51FAA46E1AA2CB5900123FDE /* HeadView.m in Sources */,
@@ -1432,6 +1447,7 @@
 				519584251A8CC37E003619EF /* MBProgressHUD.m in Sources */,
 				511D8DD61A865D6800317359 /* FRDLivelyButton.m in Sources */,
 				5195841C1A8C9631003619EF /* SwitchControllerTool.m in Sources */,
+				91C851941ACAE70600D86758 /* appView.m in Sources */,
 				51FAA4681AA2CB5900123FDE /* ProgramViewController.m in Sources */,
 				517721DD1A878E1F006BBC67 /* WeiBoAcountTool.m in Sources */,
 				517721E91A878E1F006BBC67 /* UIActivityIndicatorView+AFNetworking.m in Sources */,

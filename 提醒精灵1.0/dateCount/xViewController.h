@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol xAppDelegate <NSObject>
+
+
+@optional
+-(void)SetController;
+@end
 
 @interface xViewController : UIViewController
 {
@@ -17,7 +23,7 @@
 }
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UIView *arcBgView;
-
+@property (nonatomic,assign)id<xAppDelegate> delegate;
 - (IBAction)start:(id)sender;
 - (IBAction)pause:(id)sender;
 - (IBAction)cancle:(id)sender;
