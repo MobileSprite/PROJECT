@@ -458,8 +458,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 -(void)clickGroup
 {
     
-    
-    
     CGRect temp3 =self.datePicker.frame;
     
     if (!groupClick)
@@ -1896,8 +1894,62 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     [swipeCover addTarget:self action:@selector(removeCover2:) forControlEvents:UIControlEventTouchUpInside];
     
-        [self.view addSubview:swipeCover];
+    [self.view addSubview:swipeCover];
     
+    
+}
+
+-(void)makeSwipeR:(UIGestureRecognizer *)sender
+{
+    
+    CGRect tempFrame = self.HeadView.frame;
+    tempFrame.origin.x = 0;
+    
+    [UIView animateWithDuration:AnimateTimeGesture animations:^{
+        
+        self.HeadView.frame = tempFrame;
+    }];
+    
+    canAdd = NO;
+    
+    if (dingClick)
+    {
+        [self clickDing];
+        
+    }
+    
+    if (timeClick)
+    {
+        CGRect tempt = self.datePicker.frame;
+        
+        tempt.origin.y = 568;
+        
+        timeClick = NO;
+        
+        self.time.enabled = NO;
+        self.ding.enabled = YES;
+        
+        clickDate = self.datePicker.date;
+        
+        self.time.enabled = YES;
+        
+        [UIView animateWithDuration:AnimateTimePicker animations:^{
+            
+            self.datePicker.frame = tempt;
+        } completion:^(BOOL finished)
+         {
+             
+         }];
+        
+    }
+    
+    [self loadInit];
+    
+    UIButton *button = (UIButton *) [self.view viewWithTag:222];
+    
+    [self removeCover2:button];
+    
+    canDelete = YES;
     
 }
 
@@ -1970,63 +2022,16 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
 }
 
--(void)makeSwipeR:(UIGestureRecognizer *)sender
-{
-    
-    CGRect tempFrame = self.HeadView.frame;
-    tempFrame.origin.x = 0;
-    
-    [UIView animateWithDuration:AnimateTimeGesture animations:^{
-        
-        self.HeadView.frame = tempFrame;
-    }];
-    
-    canAdd = NO;
-    
-    if (dingClick)
-    {
-        [self clickDing];
 
-    }
-    
-    if (timeClick)
-    {
-        CGRect tempt = self.datePicker.frame;
-        
-        tempt.origin.y = 568;
-        
-        timeClick = NO;
-        
-        self.time.enabled = NO;
-        self.ding.enabled = YES;
-        
-        clickDate = self.datePicker.date;
-
-        self.time.enabled = YES;
-        
-        [UIView animateWithDuration:AnimateTimePicker animations:^{
-            
-            self.datePicker.frame = tempt;
-        } completion:^(BOOL finished)
-        {
-            
-        }];
-        
-    }
-    
-    [self loadInit];
-    
-    UIButton *button = (UIButton *) [self.view viewWithTag:222];
-    
-    [self removeCover2:button];
-    
-    canDelete = YES;
-    
-}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
+}
+
+-(void)clickReload:(UIButton *)sender
+{
+    
 }
 
 @end
