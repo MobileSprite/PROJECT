@@ -41,6 +41,10 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    [self.window makeKeyAndVisible];
 //    self.window.rootViewController = logViewController;
+    [UMSocialData setAppKey:@"5521ead4fd98c57ecd000424"];
+    
+    
+    
     
     xViewController *controller =[[xViewController alloc]init];
     controller.delegate =self;

@@ -24,7 +24,9 @@
 
 #import <MessageUI/MessageUI.h>
 
-@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
+#import "UMSocial.h"
+
+@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,UMSocialDataDelegate,UMSocialUIDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImageView;
 
@@ -156,7 +158,13 @@
     
     SettingItem *item1_2 = [SettingItem setupWithTitleName:@"分享好友"];
     
+    __weak SettingItemController *controller = self;
+    
     item1_2.option = ^{
+        
+#pragma mark 分享给好友，文字和图片
+        [UMSocialSnsService presentSnsIconSheetView:controller appKey:@"5521ead4fd98c57ecd000424" shareText:@""shareImage:[UIImage imageNamed:@""] shareToSnsNames:[NSArray arrayWithObjects:UMShareToDouban,UMShareToEmail,UMShareToRenren,UMShareToSina,UMShareToSms, nil] delegate:controller];
+        
 
     };
     
@@ -423,12 +431,21 @@
         
 //        NSString *fullPath = [NSString alloc]
         
-#pragma warn ------------删除当前账号的信息
+#pragma mark 删除当前账号的信息
         NSError *error;
         [[NSFileManager defaultManager]removeItemAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"] error:&error];
         
         
     }
+    
+}
+
+
+#pragma mark 分享组件代理
+
+-(void)didFinishGetUMSocialDataResponse:(UMSocialResponseEntity *)response
+{
+    NSLog(@"---");
     
 }
 
