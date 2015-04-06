@@ -421,12 +421,13 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     self.group.enabled=YES;
 
-    tempt2.origin.y = 406;
+    tempt2.origin.y = PickerHeight;
 
     
     if (!dingClick)
     {
         tempt.origin.y = PickerHeight;
+        
         dingClick = YES;
     }else
     {
@@ -485,7 +486,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     [UIView animateWithDuration:AnimateTimePicker animations:^{
         
         self.groupPicker.frame = temp3;
+        
         self.group.enabled=NO;
+        
     }completion:^(BOOL finished) {
             if (canAdd) {
                 
@@ -1902,12 +1905,29 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         [UIView animateWithDuration:AnimateTimePicker animations:^{
             
             self.datePicker.frame = tempt;
+            
         } completion:^(BOOL finished)
          {
              
          }];
         
     }
+    
+    if (groupClick)
+    {
+        CGRect tempt = self.groupPicker.frame;
+        
+        tempt.origin.y = 568;
+        
+        [UIView animateWithDuration:AnimateTimePicker animations:^{
+            
+            self.groupPicker.frame = tempt;
+            
+        } completion:^(BOOL finished)
+         {
+         }];
+    }
+    
     
     [self loadInit];
     
