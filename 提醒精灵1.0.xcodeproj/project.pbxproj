@@ -145,7 +145,6 @@
 		5196051B19D2D4E90022B343 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5196051A19D2D4E90022B343 /* main.m */; };
 		5196051F19D2D4E90022B343 /* ProgramAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5196051E19D2D4E90022B343 /* ProgramAppDelegate.m */; };
 		5196052219D2D4E90022B343 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5196052019D2D4E90022B343 /* Main.storyboard */; };
-		5196052719D2D4E90022B343 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5196052619D2D4E90022B343 /* Images.xcassets */; };
 		5196052E19D2D4E90022B343 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5196052D19D2D4E90022B343 /* XCTest.framework */; };
 		5196052F19D2D4E90022B343 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5196050E19D2D4E90022B343 /* Foundation.framework */; };
 		5196053019D2D4E90022B343 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5196051219D2D4E90022B343 /* UIKit.framework */; };
@@ -188,6 +187,7 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
+		91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C0AE091AD25068009AA6DC /* Images.xcassets */; };
 		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
 		91C851921ACAE70600D86758 /* AppCommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C8518B1ACAE70600D86758 /* AppCommend.xib */; };
 		91C851931ACAE70600D86758 /* appModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518D1ACAE70600D86758 /* appModel.m */; };
@@ -421,7 +421,6 @@
 		5196051D19D2D4E90022B343 /* ProgramAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramAppDelegate.h; sourceTree = "<group>"; };
 		5196051E19D2D4E90022B343 /* ProgramAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgramAppDelegate.m; sourceTree = "<group>"; };
 		5196052119D2D4E90022B343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5196052619D2D4E90022B343 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5196052C19D2D4E90022B343 /* 提醒精灵1.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "提醒精灵1.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196052D19D2D4E90022B343 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5196053519D2D4E90022B343 /* 提醒精灵1.0Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "提醒精灵1.0Tests-Info.plist"; sourceTree = "<group>"; };
@@ -489,6 +488,7 @@
 		51FAA4671AA2CB5900123FDE /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		51FAA4761AA2CF7000123FDE /* EventDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTool.h; sourceTree = "<group>"; };
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
+		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
 		91C8518A1ACAE70600D86758 /* AppCommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommend.m; sourceTree = "<group>"; };
 		91C8518B1ACAE70600D86758 /* AppCommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCommend.xib; sourceTree = "<group>"; };
@@ -1073,7 +1073,6 @@
 				5177216C1A878E1E006BBC67 /* LogIn */,
 				511CD4EF19D4676900A78DC6 /* Other */,
 				518535F51AD2256500B35271 /* ShareSDK */,
-				5196052619D2D4E90022B343 /* Images.xcassets */,
 				5196051519D2D4E90022B343 /* Supporting Files */,
 			);
 			path = "提醒精灵1.0";
@@ -1082,6 +1081,7 @@
 		5196051519D2D4E90022B343 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91C0AE091AD25068009AA6DC /* Images.xcassets */,
 				5178DFFB19F1EABA008104F2 /* pic */,
 				511EC1E019F145C9009A8339 /* switch */,
 				515A68DF19E98858000FC00B /* plist */,
@@ -1384,7 +1384,6 @@
 			files = (
 				5178E00719F1EABA008104F2 /* 6.png in Resources */,
 				515A68D419E98236000FC00B /* 02.caf in Resources */,
-				5196052719D2D4E90022B343 /* Images.xcassets in Resources */,
 				5178E00319F1EABA008104F2 /* 2.png in Resources */,
 				51BA1C0319F4222B002F8BF1 /* donebutton@2x.png in Resources */,
 				518536171AD2256500B35271 /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -1434,6 +1433,7 @@
 				51BA1BFB19F41E3A002F8BF1 /* week_icon@2x.png in Resources */,
 				5178E00219F1EABA008104F2 /* 1.png in Resources */,
 				5178E00419F1EABA008104F2 /* 3.png in Resources */,
+				91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */,
 				51B5BA6319E79D9A00018E76 /* myRemaind.plist in Resources */,
 				5131658E1AA5E68200A5790E /* 10000.caf in Resources */,
 				515A68D319E98236000FC00B /* 01.caf in Resources */,

@@ -77,7 +77,7 @@
     {
         NSLog(@"click QQ");
         
-    }else if ([title isEqualToString:@"RenRen"])
+    }else if ([title isEqualToString:@"人人登录"])
     {
         NSLog(@"click RenRen");
         
@@ -92,7 +92,7 @@
             
         }];
         
-    }else if ([title isEqualToString:@"WeiBo"])
+    }else if ([title isEqualToString:@"微博登录"])
     {
         NSLog(@"click WeiBo");
         
