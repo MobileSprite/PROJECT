@@ -205,22 +205,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="UEL-5i-I2a">
-                                <rect key="frame" x="54" y="300" width="213" height="33"/>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enter" id="Bag-va-eUa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="QQ" backgroundImage="find_logout_qq_n.png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="find_logout_qq_h.png"/>
-                                <connections>
-                                    <action selector="choosePlatformLogIn:" destination="SLe-3c-tAP" eventType="touchUpInside" id="ZM9-zG-gCD"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b68-yo-mOI">
-                                <rect key="frame" x="136" y="357" width="46" height="30"/>
+                                <rect key="frame" x="84" y="172" width="152" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LogIn">
+                                <color key="backgroundColor" red="0.013785875011678415" green="0.53197333161160865" blue="0.91534391534391535" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="快速登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -229,10 +223,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="uIx-GT-V3l">
-                                <rect key="frame" x="54" y="196" width="213" height="33"/>
+                                <rect key="frame" x="84" y="267" width="70" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="WeiBo" backgroundImage="find_logout_sina_n.png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.015060869232411678" green="0.58117317730979212" blue="1" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="微博登录">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="find_logout_sina_h.png"/>
@@ -241,10 +237,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="63G-38-pU8">
-                                <rect key="frame" x="54" y="249" width="213" height="33"/>
+                                <rect key="frame" x="162" y="267" width="74" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RenRen" backgroundImage="find_logout_renren_n.png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.025276271820000001" green="0.58741514650000004" blue="1" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="人人登录">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="find_logout_renren_h.png"/>
@@ -556,12 +554,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="calender_s" width="23" height="24"/>
-        <image name="find_logout_qq_h.png" width="212" height="33"/>
-        <image name="find_logout_qq_n.png" width="212" height="33"/>
+        <image name="enter" width="640" height="960"/>
         <image name="find_logout_renren_h.png" width="212" height="33"/>
-        <image name="find_logout_renren_n.png" width="212" height="33"/>
         <image name="find_logout_sina_h.png" width="212" height="33"/>
-        <image name="find_logout_sina_n.png" width="212" height="33"/>
         <image name="groupbutton_disable.png" width="40" height="40"/>
         <image name="groupbutton_highlight@2x.png" width="400" height="58"/>
         <image name="groupbutton_nomal.png" width="40" height="40"/>
