@@ -113,9 +113,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 @property(nonatomic,weak)altView *alterView;
 
-
-
-
 - (IBAction)clickTime;
 
 - (IBAction)clickDing;
@@ -300,7 +297,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     CGRect tempt2 = self.musicPicker.frame;
     
-    if (tempt.origin.y == 357)
+    if (tempt.origin.y == PickerHeight)
     {
         tempt.origin.y = 568;
         
@@ -314,7 +311,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
             
         }];
     }
-    if (tempt2.origin.y == 357)
+    if (tempt2.origin.y == PickerHeight)
     {
         tempt2.origin.y = 568;
         [UIView animateWithDuration:AnimateTimePicker animations:^{
@@ -332,6 +329,10 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     [self loadInit];
     canDelete = YES;
     */
+    
+//    [UIApplication sharedApplication].keyWindow.bounds.size.height<=480? 293:PickerHeight;
+    
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -349,12 +350,12 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     CGRect tempt2 = self.musicPicker.frame;
     
-    tempt2.origin.y = 357;
+    tempt2.origin.y = PickerHeight;
 
     
     if (!timeClick)
     {
-        tempt.origin.y = 357;
+        tempt.origin.y = PickerHeight;
         timeClick = YES;
         
         
@@ -392,7 +393,8 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
     } completion:^(BOOL finished) {
         
-
+        NSLog(@"%@",NSStringFromCGRect(self.datePicker.frame));
+        
     }];
     
     
@@ -424,7 +426,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     if (!dingClick)
     {
-        tempt.origin.y = 357;
+        tempt.origin.y = PickerHeight;
         dingClick = YES;
     }else
     {
@@ -440,9 +442,13 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         self.musicPicker.frame = tempt;
         
     }];
+    
     [UIView animateWithDuration:AnimateTimePicker animations:^{
+        
         groupSeg =YES;
+        
         groupClick=YES;
+        
         [self.groupPicker reloadAllComponents];
         
         self.groupPicker.frame = tempt2;
@@ -462,7 +468,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     if (!groupClick)
     {
-        temp3.origin.y = 406;
+        temp3.origin.y = PickerHeight;
         
         groupClick = YES;
     }else
@@ -485,6 +491,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
                 
                 [self makeAdds];
                 canAdd=NO;
+                
+                NSLog(@"group---%@",NSStringFromCGRect(self.groupPicker.frame));
+                
             }
         
         
@@ -834,7 +843,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     CGRect tempt = self.datePicker.frame;
     CGRect tempt2 = self.musicPicker.frame;
     
-    if (tempt.origin.y == 357 || tempt2.origin.y == 357)
+    if (tempt.origin.y == PickerHeight || tempt2.origin.y == PickerHeight)
     {
         tempt.origin.y = 568;
         tempt2.origin.y = 568;
@@ -1326,14 +1335,14 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     CGRect tempt2 = self.musicPicker.frame;
     
-    if (tempt2.origin.y == 357)
+    if (tempt2.origin.y == PickerHeight)
     {
         tempt2.origin.y = 568;
         
     }
     if (tempt.origin.y == 568)
     {
-        tempt.origin.y = 357;
+        tempt.origin.y = PickerHeight;
         
     }else
     {
@@ -1369,14 +1378,14 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     CGRect tempt2 = self.datePicker.frame;
     
-    if (tempt2.origin.y == 357)
+    if (tempt2.origin.y == PickerHeight)
     {
         tempt2.origin.y = 568;
         
     }
     if (tempt.origin.y == 568)
     {
-        tempt.origin.y = 357;
+        tempt.origin.y = PickerHeight;
         
     }else
     {
@@ -1683,49 +1692,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
                  didFinishWithResult:(MessageComposeResult)result
 {
 	[self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
-
-#pragma mark-filePath
-
--(void)loadLocalFile
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:filePath])
-    {
-        NSLog(@"creatNew");
-        
-        NSString *aimPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]stringByAppendingPathComponent:@"myRemaind.plist"];
-        
-        NSString *datePath = [[[NSBundle mainBundle]bundlePath]stringByAppendingPathComponent:@"myRemaind.plist"];
-        
-        NSError *error;
-        
-        if ([fileManager copyItemAtPath:datePath toPath:aimPath error:&error])
-        {
-            NSLog(@"copy success");
-        }
-        else
-        {
-            NSLog(@"%@",error);
-        }
-        
-    }else
-    {
-        NSLog(@"already exit");
-    }
-
-}
-
--(void)addFilePath
-{
-    NSString *home = NSHomeDirectory();
-    
-    NSString * docPath = [home stringByAppendingPathComponent:@"Documents"];
-    
-    filePath = [docPath stringByAppendingPathComponent:@"myRemaind.plist"];
-    
 }
 
 #pragma mark - Model加载
