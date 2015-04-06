@@ -10,7 +10,7 @@
 #define ____1_0_Define_h
 
 #define PickerHeight [UIApplication sharedApplication].keyWindow.bounds.size.height<=480? 293:357
-
+#define WinSize self.view.frame.size 
 #define AnimateTimeGesture .45
 #define AnimateTimePicker .45
 

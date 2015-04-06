@@ -187,6 +187,7 @@
 		91BB4F591AD26159008A98CD /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F4D1AD26159008A98CD /* UMSnsAccountViewController.xib */; };
 		91BB4F5A1AD26159008A98CD /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F4E1AD26159008A98CD /* UMSShareListController.xib */; };
 		91BB4F5B1AD26159008A98CD /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F4F1AD26159008A98CD /* UMSocialSDKResourcesNew.bundle */; };
+		91BB4F5F1AD27AE4008A98CD /* app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F5E1AD27AE4008A98CD /* app.plist */; };
 		91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C0AE091AD25068009AA6DC /* Images.xcassets */; };
 		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
 		91C851921ACAE70600D86758 /* AppCommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C8518B1ACAE70600D86758 /* AppCommend.xib */; };
@@ -488,6 +489,7 @@
 		91BB4F4E1AD26159008A98CD /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		91BB4F4F1AD26159008A98CD /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		91BB4F501AD26159008A98CD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
+		91BB4F5E1AD27AE4008A98CD /* app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
 		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
 		91C8518A1ACAE70600D86758 /* AppCommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommend.m; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 				515A68E319E98936000FC00B /* musicModel.plist */,
 				51B5BA6219E79D9A00018E76 /* myRemaind.plist */,
 				511CD4E819D4316C00A78DC6 /* MusicList.plist */,
+				91BB4F5E1AD27AE4008A98CD /* app.plist */,
 				511CD4EA19D43CFA00A78DC6 /* CountsList.plist */,
 				5196051619D2D4E90022B343 /* 提醒精灵1.0-Info.plist */,
 				5108667D19F1EFBE00528A86 /* remainTimes.plist */,
@@ -1466,6 +1469,7 @@
 				517721F91A878E1F006BBC67 /* find_logout_renren_h.png in Resources */,
 				515FD26819F2C56A00679CDC /* timebutton_hightlight@2x.png in Resources */,
 				515A68DB19E98236000FC00B /* 09.caf in Resources */,
+				91BB4F5F1AD27AE4008A98CD /* app.plist in Resources */,
 				515FD24B19F2AC5200679CDC /* barbutton@2x.png in Resources */,
 				515FD25919F2B0F900679CDC /* barbutton_hightlight@2x.png in Resources */,
 				5196052219D2D4E90022B343 /* Main.storyboard in Resources */,
