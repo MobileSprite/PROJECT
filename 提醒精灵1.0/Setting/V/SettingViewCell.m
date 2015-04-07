@@ -17,7 +17,7 @@
     SettingViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell)
     {
-        cell = [[SettingViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [[SettingViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         
     }
     
@@ -27,7 +27,7 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
     }
@@ -74,13 +74,31 @@
     frame.size.width -= 10;
     
     [super setFrame:frame];
+    
 
 }
 
 -(void)setUpLeftView
 {
-    self.textLabel.text = self.item.title;
+    self.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
     
+    [self.textLabel setTextColor:[UIColor blackColor]];
+    
+
+    self.textLabel.text = self.item.title;
+    if (self.item.icon)
+    {
+        self.imageView.image = [UIImage imageNamed:self.item.icon];
+
+    }
+    
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    NSLog(@"%@",NSStringFromCGRect(self.frame));
 }
 
 -(void)setUpRightView

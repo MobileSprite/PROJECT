@@ -35,7 +35,6 @@
     if (self) {
         // Custom initialization
         
-        
     }
     
     return self;
@@ -44,6 +43,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+
     // Do any additional setup after loading the view from its nib.
     
     
@@ -58,6 +60,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+ 
+
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
     
 }
 
@@ -75,11 +84,9 @@
     
     if ([title isEqualToString:@"QQ"])
     {
-        NSLog(@"click QQ");
         
     }else if ([title isEqualToString:@"人人登录"])
     {
-        NSLog(@"click RenRen");
         
         RenRenController *renRen = [[RenRenController alloc]init];
         
@@ -94,7 +101,6 @@
         
     }else if ([title isEqualToString:@"微博登录"])
     {
-        NSLog(@"click WeiBo");
         
         WeiBoViewController *weiBo = [[WeiBoViewController alloc]init];
         
@@ -110,9 +116,8 @@
         }];
         
         
-    }else if ([title isEqualToString:@"LogIn"])
+    }else if ([title isEqualToString:@"快速登录"])
     {
-        NSLog(@"log in");
         
         AnyoneOauth *anyoneOauth = [[AnyoneOauth alloc]init];
         

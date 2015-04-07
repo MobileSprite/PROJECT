@@ -95,7 +95,9 @@
 
 -(void)addGroup1
 {
-    SettingItem *item1_0 = [SettingItem setupWithTitleName:@"应用评分"];
+    SettingItem *item1_0 = [SettingItem setupWithIcon:@"contacts" Title:@"应用评分"];
+    
+//    item1_0.icon
     
     item1_0.option = ^{
         
@@ -117,7 +119,7 @@
         
     };
     
-    SettingItem *item1_1 = [SettingItem setupWithTitleName:@"意见反馈"];
+    SettingItem *item1_1 = [SettingItem setupWithIcon:@"email" Title:@"意见反馈"];
     
     item1_1.option = ^{
         
@@ -156,7 +158,7 @@
 
     };
     
-    SettingItem *item1_2 = [SettingItem setupWithTitleName:@"分享好友"];
+    SettingItem *item1_2 = [SettingItem setupWithIcon:@"share" Title:@"分享好友"];
     
     __weak SettingItemController *controller = self;
     
@@ -168,7 +170,7 @@
 
     };
     
-    SettingItem *item1_3 = [SettingItem setupWithTitleName:@"功能引导"];
+    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能引导"];
     
     item1_3.option = ^{
         
@@ -192,9 +194,9 @@
 
 -(void)addGroup2
 {
-    SettingItem *item2_0 = [SettingItem setupWithIcon:nil Title:@"关于作者" DestineClass:[AboutAuthor class]];
+    SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于作者" DestineClass:[AboutAuthor class]];
     
-    SettingItem *item2_1 = [SettingItem setupWithIcon:nil Title:@"应用推荐" DestineClass:[AppCommend class]];
+    SettingItem *item2_1 = [SettingItem setupWithIcon:@"box" Title:@"应用推荐" DestineClass:[AppCommend class]];
 
     
     SettingGroup *group_2 = [[SettingGroup alloc]init];
@@ -209,7 +211,7 @@
 
 -(void)addGroup3
 {
-    SettingItem *item3_0 = [SettingItem setupWithTitleName:@"版本检测"];
+    SettingItem *item3_0 = [SettingItem setupWithIcon:@"bottle" Title:@"版本检测"];
     
     item3_0.option = ^{
         
@@ -264,6 +266,12 @@
     
     cell.item = group.items[indexPath.row];
     // Configure the cell...
+    
+    
+    
+    
+    
+    
     
     return cell;
 }

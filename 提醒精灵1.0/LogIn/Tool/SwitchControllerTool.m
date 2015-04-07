@@ -45,8 +45,6 @@ typedef enum timeInterval{
         ProgramTabBarController *proVc = [story instantiateViewControllerWithIdentifier:@"mainController"];
         
         
-        
-        
         [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
         
 #warning  根据表中的模型数据重新添加note-----

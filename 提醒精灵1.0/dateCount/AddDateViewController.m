@@ -43,19 +43,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        // Custom initialization
-        
         self.dateButton.userInteractionEnabled = NO;
-        
-//        self.view.backgroundColor = [UIColor grayColor];
         
         self.textField.delegate = self;
         
-        NSDateFormatter *defaultFormatter = [[NSDateFormatter alloc]init];
+        self.datePick.date = [NSDate date];
+
         
-        [defaultFormatter setDateFormat:@"yyyy-MM-dd"];
         
-        self.dateButton.titleLabel.text = [defaultFormatter stringFromDate:self.datePick.date];
         
     }
     
@@ -70,6 +65,12 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.textField];
 
     [self.datePick addTarget:self action:@selector(timeChange) forControlEvents:UIControlEventValueChanged];
+    
+    NSDateFormatter *defaultFormatter = [[NSDateFormatter alloc]init];
+    
+    [defaultFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    self.dateButton.titleLabel.text = [defaultFormatter stringFromDate:self.datePick.date];
 
 }
 
