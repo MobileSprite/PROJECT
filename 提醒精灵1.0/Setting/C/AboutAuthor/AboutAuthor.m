@@ -67,11 +67,11 @@
     AboutCode.enabled=YES;
 
     UIImageView *image= [[UIImageView alloc]initWithFrame:CGRectMake(WinSize.width/2-40, WinSize.height/2-170, 76, 76)];
-    image.image=[UIImage imageNamed:@"Icon-76"];
+    image.image=[UIImage imageNamed:@"Icon2-60"];
     [self.view addSubview:image];
     UILabel *copyRight= [[UILabel alloc]initWithFrame:CGRectMake(WinSize.width/2-40, WinSize.height/2-100, 290, 30)];
     copyRight.textAlignment=NSTextAlignmentLeft;
-    copyRight.text=@"手机提醒精灵1.0";
+    copyRight.text=@"手机提醒精灵";
     copyRight.textColor=[UIColor grayColor];
     copyRight.font=[UIFont systemFontOfSize:10];
     

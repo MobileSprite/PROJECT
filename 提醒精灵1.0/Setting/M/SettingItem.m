@@ -17,7 +17,7 @@
     item.icon = icon;
     item.title = title;
     item.controllerClass = destineClass;
-    
+
     return item;
     
 }

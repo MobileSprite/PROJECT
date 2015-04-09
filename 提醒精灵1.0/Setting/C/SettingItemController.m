@@ -15,6 +15,7 @@
 
 #import "AboutAuthor/AboutAuthor.h"
 #import "AppCommend/Controller/AppCommend.h"
+#import "FeatureController.h"
 
 #import "HFStretchableTableHeaderView.h"
 
@@ -26,7 +27,7 @@
 
 #import "UMSocial.h"
 
-@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,UMSocialDataDelegate,UMSocialUIDelegate>
+@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,UMSocialDataDelegate,UMSocialUIDelegate,FeatureControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImageView;
 
@@ -123,10 +124,6 @@
     
     item1_1.option = ^{
         
-        NSLog(@"意见反馈");
-        
-#warning          *  modal a viewcontroller to send e-mail
-
         /**
          *  send e-mail;
          */
@@ -170,14 +167,13 @@
 
     };
     
-    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能引导"];
+//    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能引导"];
+    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能介绍" DestineClass:[FeatureController class]];
+    
     
     item1_3.option = ^{
         
         NSLog(@"功能引导");
-
-#warning  modal a viewcontroller with feature guide
-
         
     };
     
@@ -295,11 +291,17 @@
     if (item.controllerClass)
     {
         
-        AboutAuthor *Vc = [[item.controllerClass alloc]init];
+        UIViewController *Vc = [[item.controllerClass alloc]init];
         
         Vc.title = item.title;
         
         [self.navigationController pushViewController:Vc animated:YES];
+        
+        if ([Vc.title isEqualToString:@"功能介绍"])
+        {
+            FeatureController *feature = (FeatureController*)Vc;
+            feature.delegate = self;
+        }
         
     }
     
@@ -448,6 +450,14 @@
     
 }
 
+
+-(void)featureControllerViewDismissBackToSourceController
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+}
 
 #pragma mark 分享组件代理
 

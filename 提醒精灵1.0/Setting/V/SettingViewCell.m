@@ -62,6 +62,7 @@
     {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
+        
     }
     
     
@@ -86,6 +87,7 @@
     
 
     self.textLabel.text = self.item.title;
+    
     if (self.item.icon)
     {
         self.imageView.image = [UIImage imageNamed:self.item.icon];
