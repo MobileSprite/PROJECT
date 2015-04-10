@@ -175,6 +175,8 @@
         
         NSLog(@"功能引导");
         
+        
+        
     };
     
     
@@ -450,12 +452,21 @@
     
 }
 
+-(BOOL)hidesBottomBarWhenPushed
+{
+    self.navigationController.navigationBarHidden = NO;
+    
+    return NO;
+}
+
 
 -(void)featureControllerViewDismissBackToSourceController
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    
+    NSLog(@"%@",self.navigationController);
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
     
 }
 

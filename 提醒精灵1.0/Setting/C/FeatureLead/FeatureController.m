@@ -66,8 +66,7 @@
     
     self.scrollView.userInteractionEnabled = YES;
     
-    
-    
+    self.scrollView.delegate = self;
     
     for (int i = 0; i<10; i++)
     {
@@ -85,9 +84,8 @@
         
     }
     
+    /*
     UIButton *dimiss2 = [[UIButton alloc]init];
-    
-    dimiss2.userInteractionEnabled = YES;
     
     dimiss2.frame = CGRectMake(width*9+width/2,height-100, 55, 30);
     
@@ -100,6 +98,10 @@
     dimiss2.backgroundColor = [UIColor redColor];
     
     [self.scrollView addSubview:dimiss2];
+     
+     */
+    
+    
     
 }
 
@@ -121,13 +123,28 @@
     
     if ([self.delegate respondsToSelector:@selector(featureControllerViewDismissBackToSourceController)])
     {
+        
         [self.delegate featureControllerViewDismissBackToSourceController];
-        NSLog(@"---");
+
         
     }
     
 }
 
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    
+    if ((*targetContentOffset).x>=2880)
+    {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self dismiss];
+            
+        });
+    }
+
+}
 /*
 #pragma mark - Navigation
 
