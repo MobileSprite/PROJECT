@@ -378,7 +378,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.2507184294" green="0.84085486659999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="MainLabel" destination="8r5-Qv-VHZ" id="7bm-DF-jj9"/>
