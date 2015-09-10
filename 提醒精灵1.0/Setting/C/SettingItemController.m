@@ -25,9 +25,9 @@
 
 #import <MessageUI/MessageUI.h>
 
-#import "UMSocial.h"
+//#import "UMSocial.h"
 
-@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,UMSocialDataDelegate,UMSocialUIDelegate,FeatureControllerDelegate>
+@interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,FeatureControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImageView;
 
@@ -155,17 +155,14 @@
 
     };
     
-    SettingItem *item1_2 = [SettingItem setupWithIcon:@"share" Title:@"分享好友"];
+//    SettingItem *item1_2 = [SettingItem setupWithIcon:@"share" Title:@"分享好友"];
+//    __weak SettingItemController *controller = self;
+//    item1_2.option = ^{
     
-    __weak SettingItemController *controller = self;
-    
-    item1_2.option = ^{
-        
 #pragma mark 分享给好友，文字和图片
-        [UMSocialSnsService presentSnsIconSheetView:controller appKey:@"5521ead4fd98c57ecd000424" shareText:@""shareImage:[UIImage imageNamed:@""] shareToSnsNames:[NSArray arrayWithObjects:UMShareToDouban,UMShareToEmail,UMShareToRenren,UMShareToSina,UMShareToSms, nil] delegate:controller];
-        
-
-    };
+//        [UMSocialSnsService presentSnsIconSheetView:controller appKey:@"5521ead4fd98c57ecd000424" shareText:@""shareImage:[UIImage imageNamed:@""] shareToSnsNames:[NSArray arrayWithObjects:UMShareToDouban,UMShareToEmail,UMShareToRenren,UMShareToSina,UMShareToSms, nil] delegate:controller];
+    
+//    };
     
 //    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能引导"];
     SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能介绍" DestineClass:[FeatureController class]];
@@ -182,7 +179,7 @@
     
     SettingGroup *group_1 = [[SettingGroup alloc]init];
     
-    group_1.items = @[item1_0,item1_1,item1_2,item1_3];
+    group_1.items = @[item1_0,item1_1,item1_3];
     
     [self.groupArray addObject:group_1];
     
@@ -194,14 +191,14 @@
 {
     SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于作者" DestineClass:[AboutAuthor class]];
     
-    SettingItem *item2_1 = [SettingItem setupWithIcon:@"box" Title:@"应用推荐" DestineClass:[AppCommend class]];
+//    SettingItem *item2_1 = [SettingItem setupWithIcon:@"box" Title:@"应用推荐" DestineClass:[AppCommend class]];
 
     
     SettingGroup *group_2 = [[SettingGroup alloc]init];
     
     group_2.headerTitle = @"欢迎,用户";
     
-    group_2.items = @[item2_1,item2_0];
+    group_2.items = @[item2_0];
     
     [self.groupArray addObject:group_2];
     
@@ -472,10 +469,10 @@
 
 #pragma mark 分享组件代理
 
--(void)didFinishGetUMSocialDataResponse:(UMSocialResponseEntity *)response
-{
-    NSLog(@"---");
-    
-}
+//-(void)didFinishGetUMSocialDataResponse:(UMSocialResponseEntity *)response
+//{
+//    NSLog(@"---");
+//    
+//}
 
 @end

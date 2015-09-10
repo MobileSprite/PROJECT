@@ -151,13 +151,37 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 //    self.remaindArrays;
     [self.tabelView reloadData];
     
+
+    
+    
     
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.remaindArrays.count == 0) {
+        [self setEmptyView];
+        
+    }
+}
+
+- (void)setEmptyView {
+    
+    UIView *emptyView = [[UIView alloc]init];
+    emptyView.backgroundColor = [UIColor redColor];
+    self.tabelView.backgroundView = emptyView;
+    
+}
+
+- (void)clearEmptyView {
+    self.tabelView.backgroundView = nil;
 }
 
 
@@ -182,10 +206,8 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
     
     NSMutableAttributedString * placeHold2 = [[NSMutableAttributedString alloc]initWithString:@"    点击添加提醒"];
-   
-    
-//    [UIFont boldSystemFontOfSize:10]
-    [placeHold2 addAttribute:NSFontAttributeName value: [UIFont fontWithName:@"Helvetica-BoldOblique" size:10] range:NSMakeRange(0, placeHold2.length)];
+////    [UIFont boldSystemFontOfSize:10]
+    [placeHold2 addAttribute:NSFontAttributeName value: [UIFont fontWithName:@"Helvetica-BoldOblique" size:15] range:NSMakeRange(0, placeHold2.length)];
     
     [placeHold2 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:.9] range:NSMakeRange(0, placeHold2.length)];
     
@@ -479,8 +501,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         canAdd = YES;
         
         
-       
-        
     }
     
     [UIView animateWithDuration:AnimateTimePicker animations:^{
@@ -685,9 +705,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    if (buttonIndex == 0)
-        
-    {
+    if (buttonIndex == 0) {
         if (groupInfo==nil) {
             groupInfo =groupTitleArray[0];
         }
@@ -730,22 +748,23 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         [EventDataTool addDBModel:NewremainModle];
         
         
-        
         [_remaindArrays addObject:NewremainModle];
         
         
         [_remaindArrays sortUsingDescriptors:sorterArray];
-    
-      //  [dicArray addObject:inputDic];
+        
+        //  [dicArray addObject:inputDic];
         
         [self addNoteWith:NewremainModle];
-
-        /*
-        [dicArray sortUsingDescriptors:sortDescriptors];
         
-        [dicArray writeToFile:filePath atomically:YES];
+        /*
+         [dicArray sortUsingDescriptors:sortDescriptors];
+         
+         [dicArray writeToFile:filePath atomically:YES];
          */
         [self groupWithArray:_remaindArrays];
+        
+        [self clearEmptyView];
         
         [self.tabelView reloadData];
     }
@@ -1284,6 +1303,10 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
         [groupArray replaceObjectAtIndex:indexPath.section withObject:arr];
         [_remaindArrays removeObject:deleteModel];
+        if (_remaindArrays.count == 0) {
+            [self setEmptyView];
+            
+        }
 //        [self.remaindArrays removeObjectAtIndex:indexPath.row];
         
 //        [dicArray removeObjectAtIndex:indexPath.row];
@@ -1298,6 +1321,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         NSArray *indexs = @[index];
         
 //        [tableView deleteRowsAtIndexPaths:indexs withRowAnimation:UITableViewRowAnimationLeft];
+        
         [self.tabelView reloadData];
         
         for (UILocalNotification *oldNote in [UIApplication sharedApplication].scheduledLocalNotifications)

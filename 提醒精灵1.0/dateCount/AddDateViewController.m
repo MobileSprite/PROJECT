@@ -50,8 +50,6 @@
         self.datePick.date = [NSDate date];
 
         
-        
-        
     }
     
     return self;
@@ -66,11 +64,8 @@
 
     [self.datePick addTarget:self action:@selector(timeChange) forControlEvents:UIControlEventValueChanged];
     
-    NSDateFormatter *defaultFormatter = [[NSDateFormatter alloc]init];
-    
-    [defaultFormatter setDateFormat:@"yyyy-MM-dd"];
-    
-    self.dateButton.titleLabel.text = [defaultFormatter stringFromDate:self.datePick.date];
+    //TODO: 改变整个视图背景色
+    self.view.backgroundColor = [UIColor lightGrayColor];
 
 }
 
@@ -81,6 +76,16 @@
     
     [super viewDidAppear:animated];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSDateFormatter *defaultFormatter = [[NSDateFormatter alloc]init];
+    [defaultFormatter setDateFormat:@"yyyy-MM-dd"];
+    [self.dateButton setTitle:[defaultFormatter stringFromDate:[NSDate date]] forState:UIControlStateNormal];
+    
+    //    [self textChange];
+
 }
 
 -(IBAction)save

@@ -158,6 +158,7 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     // event hough it is fine on the simulator...
     CGPathAddArc(path, NULL, self.centerPoint.x, self.centerPoint.y, radius, 0, 2 * M_PI, false);
     
+#warning TOFIX 内存泄露
     return path;
 }
 

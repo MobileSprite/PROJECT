@@ -41,7 +41,7 @@
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    [self.window makeKeyAndVisible];
 //    self.window.rootViewController = logViewController;
-    [UMSocialData setAppKey:@"5521ead4fd98c57ecd000424"];
+//    [UMSocialData setAppKey:@"5521ead4fd98c57ecd000424"];
     
     
     
@@ -105,7 +105,17 @@
         }
     }
     
-    
+    if ([[UIDevice currentDevice].systemVersion floatValue]>=8.0) {
+        /*
+         UIUserNotificationTypeNone    = 0,      不发出通知
+         UIUserNotificationTypeBadge   = 1 << 0, 改变应用程序图标右上角的数字
+         UIUserNotificationTypeSound   = 1 << 1, 播放音效
+         UIUserNotificationTypeAlert   = 1 << 2, 是否运行显示横幅
+         */
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
 
     return YES;
 }
