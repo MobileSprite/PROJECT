@@ -174,8 +174,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 - (void)setEmptyView {
     
-    UIView *emptyView = [[UIView alloc]init];
-    emptyView.backgroundColor = [UIColor redColor];
+    UIImageView *emptyView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"emptyView"]];
+    emptyView.contentMode = UIViewContentModeScaleAspectFit;
+    
     self.tabelView.backgroundView = emptyView;
     
 }
@@ -1317,9 +1318,8 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
         [EventDataTool removeDBModel:deleteModel];
         
-        NSIndexPath *index = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-        NSArray *indexs = @[index];
-        
+      //  NSIndexPath *index = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
+//        NSArray *indexs = @[index];
 //        [tableView deleteRowsAtIndexPaths:indexs withRowAnimation:UITableViewRowAnimationLeft];
         
         [self.tabelView reloadData];
@@ -1741,7 +1741,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 -(void)groupWithArray:(NSMutableArray*)remainArray
 {
 //    NSMutableArray *temp =[NSMutableArray array];
-    NSMutableArray *saveArr=[NSMutableArray array];
+//    NSMutableArray *saveArr=[NSMutableArray array];
 
     if (groupArray.count!=0) {
         [groupArray removeAllObjects];

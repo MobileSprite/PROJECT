@@ -182,6 +182,8 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
+		6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF281BA2F91500B0FAC4 /* emptyView.png */; };
+		6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF2A1BA300B700B0FAC4 /* emptyView2.png */; };
 		91BB4F5F1AD27AE4008A98CD /* app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F5E1AD27AE4008A98CD /* app.plist */; };
 		91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C0AE091AD25068009AA6DC /* Images.xcassets */; };
 		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
@@ -474,6 +476,8 @@
 		51FAA4671AA2CB5900123FDE /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		51FAA4761AA2CF7000123FDE /* EventDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTool.h; sourceTree = "<group>"; };
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
+		6045BF281BA2F91500B0FAC4 /* emptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView.png; sourceTree = "<group>"; };
+		6045BF2A1BA300B700B0FAC4 /* emptyView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView2.png; sourceTree = "<group>"; };
 		91BB4F5E1AD27AE4008A98CD /* app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
 		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
@@ -1032,6 +1036,8 @@
 				51D25C691AA732160044A7B0 /* Setting */,
 				5177216C1A878E1E006BBC67 /* LogIn */,
 				511CD4EF19D4676900A78DC6 /* Other */,
+				6045BF281BA2F91500B0FAC4 /* emptyView.png */,
+				6045BF2A1BA300B700B0FAC4 /* emptyView2.png */,
 				51071C351AD2D48900AE9BB5 /* iconSetting */,
 				5196051519D2D4E90022B343 /* Supporting Files */,
 			);
@@ -1381,6 +1387,7 @@
 				510D95BA19F6A025001A284F /* mail_nomal@2x.png in Resources */,
 				517CBB351AD6B17C00A59717 /* 9.png in Resources */,
 				517CBB2E1AD6B17C00A59717 /* 2.png in Resources */,
+				6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */,
 				515A68E419E98936000FC00B /* musicModel.plist in Resources */,
 				51071C421AD2D48900AE9BB5 /* 23.png in Resources */,
 				51071C551AD35B5900AE9BB5 /* bottle@2x.png in Resources */,
@@ -1428,6 +1435,7 @@
 				515FD25919F2B0F900679CDC /* barbutton_hightlight@2x.png in Resources */,
 				5196052219D2D4E90022B343 /* Main.storyboard in Resources */,
 				51BA1C0519F42542002F8BF1 /* done_highlight@2x.png in Resources */,
+				6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */,
 				51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */,
 				517CBB331AD6B17C00A59717 /* 7.png in Resources */,
 				515A68D819E98236000FC00B /* 06.caf in Resources */,

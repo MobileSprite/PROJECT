@@ -389,9 +389,8 @@
     
     if (alertView.tag == 1002)
     {
-        UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
-
-        UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[1];
+//        UITabBarController *tabViewC = (UITabBarController *)self.window.rootViewController;
+//        UINavigationController *navigationC = (UINavigationController *) tabViewC.viewControllers[1];
         
 #warning ----dateCount update----------
         

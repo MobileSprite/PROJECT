@@ -43,7 +43,6 @@
     self.tinyLabel.textColor= [UIColor blackColor];
     int days = ([NSDate dateCountWithTheDate:[dateFormatter dateFromString:model.date]]+1);
     
-    
     int width = 320*days/365;
     if (width >=320)
     {
@@ -64,6 +63,8 @@
 {
     // Initialization code
     
+    [super awakeFromNib];
+    
     [self addDividerLineInCell];
     
     
@@ -79,7 +80,7 @@
     CGFloat y = self.frame.size.height-2;
     CGFloat h = 2;
     CGFloat w = self.frame.size.width-4;
-    
+
     [self addDividerLineFrame:CGRectMake(x, y, w, h)];
     
 }
@@ -108,7 +109,6 @@
 
 -(void)addDividerLineFrame:(CGRect)frame;
 {
-    
     
     self.divider.frame = frame;
     

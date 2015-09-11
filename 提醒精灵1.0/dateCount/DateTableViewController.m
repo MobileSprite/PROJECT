@@ -73,8 +73,9 @@
     dayFormatter.dateFormat = @"yyyy-MM-dd";
     
     NSString *newDay = [dayFormatter stringFromDate:today];
-    self.popButton.superview.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:2550.0/255.0 alpha:.9];
-//    self.bgroudView.backgroundColor =
+//    self.popButton.superview.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:2550.0/255.0 alpha:.9];
+//    self.popButton.backgroundColor = [UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:2550.0/255.0 alpha:.9];
+//    self.popButton.layer.cornerRadius = 25;
     
     self.todayLabel.text = newDay;
     
@@ -82,7 +83,7 @@
     
 
     [self.popButton setStyle:kFRDLivelyButtonStylePlus animated:NO];
-    
+
     [self.popButton setOptions:@{
                                  kFRDLivelyButtonColor: [UIColor whiteColor],
                       kFRDLivelyButtonHighlightedColor: [UIColor whiteColor],
@@ -102,8 +103,11 @@
     
 }
 
--(void)add:(UIButton *)sender
-{
+- (void)setEmptyView {
+    
+    UIImageView *emptyView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"emptyView2"]];
+    emptyView.contentMode = UIViewContentModeScaleAspectFit;
+    self.tableView.backgroundView = emptyView;
     
 }
 
@@ -124,12 +128,6 @@
     }];
     
 }
-
--(void)awakeFromNib
-{
-    
-}
-
 
 #pragma mark addDelegate
 
@@ -167,6 +165,13 @@
 {
 
     // Return the number of rows in the section.
+    if (self.dateArray.count == 0) {
+        [self setEmptyView];
+        
+    }else {
+        tableView.backgroundView = nil;
+    }
+    
     return self.dateArray.count;
 }
 

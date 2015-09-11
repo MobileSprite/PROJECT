@@ -159,11 +159,13 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     CGPathAddArc(path, NULL, self.centerPoint.x, self.centerPoint.y, radius, 0, 2 * M_PI, false);
     
 #warning TOFIX 内存泄露
+    CFAutorelease(path);
+
     return path;
 }
 
 // you are responsible for releasing the return CGPath
--(CGPathRef) createCenteredLineWithRadius:(CGFloat)radius angle:(CGFloat)angle offset:(CGPoint)offset
+-(CGPathRef) setupCenteredLineWithRadius:(CGFloat)radius angle:(CGFloat)angle offset:(CGPoint)offset
 {
     CGMutablePathRef path = CGPathCreateMutable();
     
@@ -176,6 +178,7 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     CGPathAddLineToPoint(path, NULL,
                          self.centerPoint.x + offset.x - radius * c,
                          self.centerPoint.y + offset.y - radius * s);
+    CFAutorelease(path);
     
     return path;
 }
@@ -186,7 +189,8 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     
     CGPathMoveToPoint(path, NULL, self.offset.x + p1.x, self.offset.y + p1.y);
     CGPathAddLineToPoint(path, NULL, self.offset.x + p2.x, self.offset.y + p2.y);
-    
+    CFAutorelease(path);
+
     return path;
 }
 
@@ -206,79 +210,79 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     if (style == kFRDLivelyButtonStyleHamburger) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 1.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, -self.dimension/2.0f/GOLDEN_RATIO)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, self.dimension/2.0f/GOLDEN_RATIO)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, -self.dimension/2.0f/GOLDEN_RATIO)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, self.dimension/2.0f/GOLDEN_RATIO)];
         
     } else if (style == kFRDLivelyButtonStylePlus) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:+M_PI_2 offset:CGPointMake(0, 0)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:+M_PI_2 offset:CGPointMake(0, 0)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
         
     } else if (style == kFRDLivelyButtonStyleCirclePlus) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/2.0f];
         newCircleAlpha = 1.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:M_PI_2 offset:CGPointMake(0, 0)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:0 offset:CGPointMake(0, 0)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:M_PI_2 offset:CGPointMake(0, 0)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:0 offset:CGPointMake(0, 0)];
         
     } else if (style == kFRDLivelyButtonStyleClose) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:+M_PI_4 offset:CGPointMake(0, 0)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:-M_PI_4 offset:CGPointMake(0, 0)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:+M_PI_4 offset:CGPointMake(0, 0)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:-M_PI_4 offset:CGPointMake(0, 0)];
         
     } else if (style == kFRDLivelyButtonStyleCircleClose) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/2.0f];
         newCircleAlpha = 1.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:+M_PI_4 offset:CGPointMake(0, 0)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:-M_PI_4 offset:CGPointMake(0, 0)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:+M_PI_4 offset:CGPointMake(0, 0)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/2.0f/GOLDEN_RATIO angle:-M_PI_4 offset:CGPointMake(0, 0)];
     
     } else if (style == kFRDLivelyButtonStyleCaretUp) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:M_PI_4 offset:CGPointMake(self.dimension/6.0f,0.0f)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:3*M_PI_4 offset:CGPointMake(-self.dimension/6.0f,0.0f)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:M_PI_4 offset:CGPointMake(self.dimension/6.0f,0.0f)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:3*M_PI_4 offset:CGPointMake(-self.dimension/6.0f,0.0f)];
         
     } else if (style == kFRDLivelyButtonStyleCaretDown) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-M_PI_4 offset:CGPointMake(self.dimension/6.0f,0.0f)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:-3*M_PI_4 offset:CGPointMake(-self.dimension/6.0f,0.0f)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-M_PI_4 offset:CGPointMake(self.dimension/6.0f,0.0f)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:-3*M_PI_4 offset:CGPointMake(-self.dimension/6.0f,0.0f)];
 
     } else if (style == kFRDLivelyButtonStyleCaretLeft) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-3*M_PI_4 offset:CGPointMake(0.0f,self.dimension/6.0f)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:3*M_PI_4 offset:CGPointMake(0.0f,-self.dimension/6.0f)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-3*M_PI_4 offset:CGPointMake(0.0f,self.dimension/6.0f)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:3*M_PI_4 offset:CGPointMake(0.0f,-self.dimension/6.0f)];
         
     } else if (style == kFRDLivelyButtonStyleCaretRight) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/20.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 0.0f;
-        newLine2Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-M_PI_4 offset:CGPointMake(0.0f,self.dimension/6.0f)];
-        newLine3Path = [self createCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:M_PI_4 offset:CGPointMake(0.0f,-self.dimension/6.0f)];
+        newLine2Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line2Layer.lineWidth/2.0f angle:-M_PI_4 offset:CGPointMake(0.0f,self.dimension/6.0f)];
+        newLine3Path = [self setupCenteredLineWithRadius:self.dimension/4.0f - self.line3Layer.lineWidth/2.0f angle:M_PI_4 offset:CGPointMake(0.0f,-self.dimension/6.0f)];
         
     } else if (style == kFRDLivelyButtonStyleArrowLeft) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:M_PI offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:M_PI offset:CGPointMake(0, 0)];
         newLine1Alpha = 1.0f;
         newLine2Path = [self createLineFromPoint:CGPointMake(0, self.dimension/2.0f)
                                          toPoint:CGPointMake(self.dimension/2.0f/GOLDEN_RATIO, self.dimension/2+self.dimension/2.0f/GOLDEN_RATIO)];
@@ -288,7 +292,7 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     } else if (style == kFRDLivelyButtonStyleArrowRight) {
         newCirclePath = [self createCenteredCircleWithRadius:self.dimension/20.0f];
         newCircleAlpha = 0.0f;
-        newLine1Path = [self createCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
+        newLine1Path = [self setupCenteredLineWithRadius:self.dimension/2.0f angle:0 offset:CGPointMake(0, 0)];
         newLine1Alpha = 1.0f;
         newLine2Path = [self createLineFromPoint:CGPointMake(self.dimension, self.dimension/2.0f)
                                          toPoint:CGPointMake(self.dimension - self.dimension/2.0f/GOLDEN_RATIO, self.dimension/2+self.dimension/2.0f/GOLDEN_RATIO)];
@@ -366,10 +370,10 @@ NSString *const kFRDLivelyButtonStyleChangeAnimationDuration = @"kFRDLivelyButto
     self.line2Layer.path = newLine2Path;
     self.line3Layer.path = newLine3Path;
 
-    CGPathRelease(newCirclePath);
-    CGPathRelease(newLine1Path);
-    CGPathRelease(newLine2Path);
-    CGPathRelease(newLine3Path);
+    //CGPathRelease(newCirclePath);
+   // CGPathRelease(newLine1Path);
+   // CGPathRelease(newLine2Path);
+    //CGPathRelease(newLine3Path);
 }
 
 // animate button pressed event.

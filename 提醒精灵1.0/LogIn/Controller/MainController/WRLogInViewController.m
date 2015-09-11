@@ -64,12 +64,6 @@
 
 }
 
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
-    
-}
-
 -(void)dismissController:(WeiBoViewController *)controller
 {
     
