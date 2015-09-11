@@ -44,6 +44,10 @@
 //    [UMSocialData setAppKey:@"5521ead4fd98c57ecd000424"];
     
     
+     UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0]}];
+    
     
     
     xViewController *controller =[[xViewController alloc]init];

@@ -34,6 +34,7 @@
 //@property (strong, nonatomic)LTPopButton *popButton;
 @property (weak, nonatomic) IBOutlet FRDLivelyButton *popButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headBackgroundView;
 
 - (IBAction)changeStyle:(FRDLivelyButton *)sender;
 
@@ -73,15 +74,15 @@
     dayFormatter.dateFormat = @"yyyy-MM-dd";
     
     NSString *newDay = [dayFormatter stringFromDate:today];
-//    self.popButton.superview.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:2550.0/255.0 alpha:.9];
-//    self.popButton.backgroundColor = [UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:2550.0/255.0 alpha:.9];
-//    self.popButton.layer.cornerRadius = 25;
+//    self.headBackgroundView.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:250.0/255.0 alpha:.9];
+    self.headBackgroundView.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
+    
+    self.headBackgroundView.frame = self.HeadView.bounds;
     
     self.todayLabel.text = newDay;
     
     self.weekLabel.text = [NSDate dateWeekInTheDate:[NSDate date]];
     
-
     [self.popButton setStyle:kFRDLivelyButtonStylePlus animated:NO];
 
     [self.popButton setOptions:@{
@@ -227,6 +228,9 @@
 
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+
+
 
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

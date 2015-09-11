@@ -34,7 +34,7 @@
     //self.view.backgroundColor =[UIColor grayColor];
     
     //设置button样式
-     NSLog(@"superView==%@",self.view);
+//     NSLog(@"superView==%@",self.view);
    
     _pauseBtn.layer.cornerRadius =8;
     _cancleBtn.layer.cornerRadius =8;
@@ -44,6 +44,8 @@
     
     [_pauseBtn setTitle:@"暂停" forState:UIControlStateNormal];
     [_pauseBtn setTitle:@"继续" forState:UIControlStateSelected];
+    self.view.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
+
     
    
 }

@@ -29,18 +29,16 @@
 -(void)setModel:(DateModel *)model
 {
     self.MainLabel.text = [NSString stringWithFormat:@"%@,还有",model.dateText];
-    self.MainLabel.textColor=[UIColor blackColor];
-//    self.MainLabel.superview.backgroundColor =[UIColor redColor];
+    self.MainLabel.textColor=[UIColor colorWithWhite:1.0 alpha:.6];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     
     dateFormatter.dateFormat = @"yyyyMMdd";
     
     self.countLabel.text = [NSString stringWithFormat:@"%d",(int)([NSDate dateCountWithTheDate:[dateFormatter dateFromString:model.date]]+1)];
-//    self.countLabel.font =[UIFont systemFontOfSize:12];
     self.countLabel.textColor=[UIColor whiteColor];
     
     self.tinyLabel.text = [NSString stringWithFormat:@"%@天",self.countLabel.text];
-    self.tinyLabel.textColor= [UIColor blackColor];
+    self.tinyLabel.textColor= [UIColor colorWithWhite:1.0 alpha:.6];
     int days = ([NSDate dateCountWithTheDate:[dateFormatter dateFromString:model.date]]+1);
     
     int width = 320*days/365;
@@ -66,6 +64,9 @@
     [super awakeFromNib];
     
     [self addDividerLineInCell];
+//    self.contentView.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:250.0/255.0 alpha:.9];
+    self.contentView.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
+
     
     
 }

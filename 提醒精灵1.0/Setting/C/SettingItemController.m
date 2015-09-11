@@ -165,21 +165,21 @@
 //    };
     
 //    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能引导"];
-    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能介绍" DestineClass:[FeatureController class]];
+//    SettingItem *item1_3 = [SettingItem setupWithIcon:@"in" Title:@"功能介绍" DestineClass:[FeatureController class]];
     
     
-    item1_3.option = ^{
-        
-        NSLog(@"功能引导");
-        
-        
-        
-    };
+//    item1_3.option = ^{
+//        
+//        NSLog(@"功能引导");
+//        
+//        
+//        
+//    };
     
     
     SettingGroup *group_1 = [[SettingGroup alloc]init];
     
-    group_1.items = @[item1_0,item1_1,item1_3];
+    group_1.items = @[item1_0,item1_1];
     
     [self.groupArray addObject:group_1];
     
@@ -196,7 +196,7 @@
     
     SettingGroup *group_2 = [[SettingGroup alloc]init];
     
-    group_2.headerTitle = @"欢迎,用户";
+    group_2.headerTitle = @"欢迎,^_^";
     
     group_2.items = @[item2_0];
     

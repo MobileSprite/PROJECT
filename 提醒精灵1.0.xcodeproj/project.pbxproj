@@ -184,6 +184,7 @@
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
 		6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF281BA2F91500B0FAC4 /* emptyView.png */; };
 		6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF2A1BA300B700B0FAC4 /* emptyView2.png */; };
+		6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */; };
 		91BB4F5F1AD27AE4008A98CD /* app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F5E1AD27AE4008A98CD /* app.plist */; };
 		91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C0AE091AD25068009AA6DC /* Images.xcassets */; };
 		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
@@ -478,6 +479,8 @@
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
 		6045BF281BA2F91500B0FAC4 /* emptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView.png; sourceTree = "<group>"; };
 		6045BF2A1BA300B700B0FAC4 /* emptyView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView2.png; sourceTree = "<group>"; };
+		6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DatePickerLabel.h"; sourceTree = "<group>"; };
+		6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DatePickerLabel.m"; sourceTree = "<group>"; };
 		91BB4F5E1AD27AE4008A98CD /* app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
 		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
@@ -554,6 +557,8 @@
 				51ADC3BA19EA566500635958 /* MyAudioTool.m */,
 				5196051D19D2D4E90022B343 /* ProgramAppDelegate.h */,
 				5196051E19D2D4E90022B343 /* ProgramAppDelegate.m */,
+				6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */,
+				6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -1531,6 +1536,7 @@
 				517CCAA61A07778800F1092A /* AddDateViewController.m in Sources */,
 				517DBC471A81D6FA00C8A8B6 /* FMResultSet.m in Sources */,
 				517721E21A878E1F006BBC67 /* AFNetworkReachabilityManager.m in Sources */,
+				6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */,
 				51C53A751A8D828F00C08CD2 /* WRLogInViewController.m in Sources */,
 				517721DE1A878E1F006BBC67 /* WeiBoOAuth.m in Sources */,
 				5189AEAB1A3189A000990927 /* ProgramTabBarController.m in Sources */,

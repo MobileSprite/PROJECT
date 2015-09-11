@@ -141,17 +141,16 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
 	// Do any additional setup after loading the view, typically from a nib.
     
-
-    
     [self viewDidLoadState];
     
-   
+    self.navigationController.navigationBar.tintColor = [UIColor greenColor];
+    
+    NSLog(@"%@", self.navigationController.navigationBar.tintColor);
+    
+    
     [self groupWithArray:self.remaindArrays];
     
-//    self.remaindArrays;
     [self.tabelView reloadData];
-    
-
     
     
     
@@ -950,42 +949,91 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
     if (groupSeg ==YES) {
-        return  groupTitleArray[row];
+        if (row > 2) {
+            return nil;
+        }
+        
+        NSAttributedString *attString = [[NSAttributedString alloc] initWithString:groupTitleArray[row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+        return  attString;// 0, 1, 2
+        
     }else
     {
-    if (component == 1)
-    {
-        MusicModel * model = self.musicModelArray[row];
+        if (component == 1)
+        {
+            MusicModel * model = self.musicModelArray[row];
+            
+            NSString *music = model.music;
+            NSAttributedString *attString = [[NSAttributedString alloc] initWithString:music attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+            return attString;
+        }
+        //    TimesModle *timesModel = self.timesArray[row];
         
-        NSString *music = model.music;
+        switch (row)
+        {
+            case 0:
+                s = @"never";
+                break;
+            case 1:
+                s = @"dayly";
+                break;
+            default:
+                s = @"weekly";
+                break;
+        }
         
-        return music;
+        //    NSString * stirng = [timesModel.times stringByAppendingString:s];
+        NSAttributedString *attString = [[NSAttributedString alloc] initWithString:s attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+        return attString;
     }
     
-    
-//    TimesModle *timesModel = self.timesArray[row];
-    
-    switch (row)
-    {
-        case 0:
-             s = @"never";
-            break;
-        case 1:
-            s = @"dayly";
-            break;
-        default:
-            s = @"weekly";
-            break;
-    }
-    
-//    NSString * stirng = [timesModel.times stringByAppendingString:s];
-    
-    return s;
-    }
+    return nil;
 }
+
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    if (groupSeg ==YES) {
+//        if (row > 2) {
+//            return nil;
+//        }
+//        
+//        return  groupTitleArray[row];// 0, 1, 2
+//        
+//    }else
+//    {
+//    if (component == 1)
+//    {
+//        MusicModel * model = self.musicModelArray[row];
+//        
+//        NSString *music = model.music;
+//        
+//        return music;
+//    }
+////    TimesModle *timesModel = self.timesArray[row];
+//    
+//    switch (row)
+//    {
+//        case 0:
+//             s = @"never";
+//            break;
+//        case 1:
+//            s = @"dayly";
+//            break;
+//        default:
+//            s = @"weekly";
+//            break;
+//    }
+//    
+////    NSString * stirng = [timesModel.times stringByAppendingString:s];
+//    
+//    return s;
+//    }
+//}
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
