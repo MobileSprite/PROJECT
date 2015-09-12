@@ -17,10 +17,6 @@
         [self swizzleInstanceSelector:@selector(setTextColor:)
                       withNewSelector:@selector(swizzledSetTextColor:)];
         
-        [self swizzleInstanceSelector:@selector(setText:)
-                      withNewSelector:@selector(swizzledSetText:)];
-
-        
         [self swizzleInstanceSelector:@selector(willMoveToSuperview:)
                       withNewSelector:@selector(swizzledWillMoveToSuperview:)];
     });
@@ -39,21 +35,9 @@
 
     }
     
-}
-
--(void) swizzledSetText:(NSString *)text {
     
-    if ([self view:self hasSuperviewOfClass:NSClassFromString(@"UIDatePicker")]) {
-        
-        NSLog(@"%@",self);
-//        [self swizzledSetText:@""];
-
-    }else {
-        [self swizzledSetText:text];
-
-    }
-
 }
+
 
 
 // Some of the UILabels haven't been added to a superview yet so listen for when they do.

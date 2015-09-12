@@ -74,7 +74,6 @@
     dayFormatter.dateFormat = @"yyyy-MM-dd";
     
     NSString *newDay = [dayFormatter stringFromDate:today];
-//    self.headBackgroundView.backgroundColor =[UIColor colorWithRed: 30.0/255.0 green:150.0/255.0 blue:250.0/255.0 alpha:.9];
     self.headBackgroundView.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
     
     self.headBackgroundView.frame = self.HeadView.bounds;

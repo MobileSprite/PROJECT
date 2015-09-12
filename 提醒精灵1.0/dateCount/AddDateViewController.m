@@ -65,7 +65,8 @@
     [self.datePick addTarget:self action:@selector(timeChange) forControlEvents:UIControlEventValueChanged];
     
     //TODO: 改变整个视图背景色
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
+
 
 }
 

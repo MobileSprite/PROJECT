@@ -45,17 +45,29 @@
     [_pauseBtn setTitle:@"暂停" forState:UIControlStateNormal];
     [_pauseBtn setTitle:@"继续" forState:UIControlStateSelected];
     self.view.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
-
-    
    
+    [self timeChange:self.DatePicker];
+    [self timeChange:self.DatePicker];
 }
 
+- (IBAction)timeChange:(UIDatePicker *)sender {
+    
+    NSInteger totalSubView = [[sender.subviews[0] subviews] count];
+    ((UILabel *)[[sender.subviews[0] subviews] objectAtIndex:(totalSubView-2)]).textColor = [UIColor redColor];
+    ((UILabel *)[[sender.subviews[0] subviews] objectAtIndex:(totalSubView-1)]).textColor = [UIColor redColor];
+
+}
 //1.设置倒计时
   //获取设定时间
 -(NSInteger)pickerCount
 {
     
     return self.DatePicker.countDownDuration ;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
 }
 
 

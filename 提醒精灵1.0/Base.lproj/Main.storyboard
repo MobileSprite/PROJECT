@@ -411,14 +411,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.2078431547" green="0.59215688710000003" blue="0.87058830259999997" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" id="l14-2O-5bC">
-                                <rect key="frame" x="0.0" y="370" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <date key="date" timeIntervalSinceReferenceDate="439818977.95152301">
-                                    <!--2014-12-09 11:56:17 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="VrD-JL-AZr">
                                 <rect key="frame" x="132" y="294" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -458,6 +450,17 @@
                                     <action selector="start:" destination="B8N-jW-lTG" eventType="touchUpInside" id="X8a-v5-7Qx"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" id="l14-2O-5bC">
+                                <rect key="frame" x="0.0" y="371" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <date key="date" timeIntervalSinceReferenceDate="439818977.95152301">
+                                    <!--2014-12-09 11:56:17 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timeChange:" destination="B8N-jW-lTG" eventType="valueChanged" id="Q6n-x9-l6n"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

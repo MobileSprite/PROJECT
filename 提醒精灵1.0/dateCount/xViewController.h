@@ -21,6 +21,7 @@
     NSInteger min;
     NSInteger sec;
 }
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UIView *arcBgView;
 @property (nonatomic,assign)id<xAppDelegate> delegate;
