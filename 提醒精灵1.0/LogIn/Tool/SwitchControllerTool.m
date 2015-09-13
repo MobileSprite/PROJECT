@@ -12,7 +12,6 @@
 #import "CurrentToken.h"
 #import "AccessTokenTool.h"
 
-#import "xAppDelegate.h"
 #import "ModelDataTool.h"
 #import "DateModel.h"
 #import "remainModel.h"

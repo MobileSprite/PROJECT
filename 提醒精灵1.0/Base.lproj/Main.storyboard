@@ -411,24 +411,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.2078431547" green="0.59215688710000003" blue="0.87058830259999997" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="VrD-JL-AZr">
-                                <rect key="frame" x="132" y="294" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16821386359433588" green="0.66192924333796443" blue="1" alpha="0.88" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="selected" title="继续"/>
-                                <connections>
-                                    <action selector="pause:" destination="B8N-jW-lTG" eventType="touchUpInside" id="eQf-wC-VE6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="AYo-js-0OZ">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="AYo-js-0OZ">
                                 <rect key="frame" x="132" y="333" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16821386359433588" green="0.66192924333796443" blue="1" alpha="0.88" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.27335459229999998" green="0.74883437289999999" blue="0.94010416669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="结束"/>
+                                <state key="disabled">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="cancle:" destination="B8N-jW-lTG" eventType="touchUpInside" id="u46-Ks-9Cg"/>
                                 </connections>
@@ -461,6 +453,21 @@
                                     <action selector="timeChange:" destination="B8N-jW-lTG" eventType="valueChanged" id="Q6n-x9-l6n"/>
                                 </connections>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="VrD-JL-AZr">
+                                <rect key="frame" x="132" y="295" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27335459229999998" green="0.74883437289999999" blue="0.94010416669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="暂停"/>
+                                <state key="disabled">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <state key="selected" title="继续"/>
+                                <connections>
+                                    <action selector="pause:" destination="B8N-jW-lTG" eventType="touchUpInside" id="eQf-wC-VE6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

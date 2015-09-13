@@ -35,9 +35,6 @@
     
     //设置button样式
 //     NSLog(@"superView==%@",self.view);
-   
-    _pauseBtn.layer.cornerRadius =8;
-    _cancleBtn.layer.cornerRadius =8;
     
     _pauseBtn.enabled=NO;
     _cancleBtn.enabled=NO;
@@ -111,7 +108,7 @@
     hour =_totlaTime/60/60;
     sec =_totlaTime%60;
     min =(_totlaTime-sec-hour*60*60)/60;
-    _timerLable.text =[NSString stringWithFormat:@"%02d:%02d:%02ld",hour,min,(long)sec];
+    _timerLable.text =[NSString stringWithFormat:@"%02ld:%02ld:%02ld",(long)hour,(long)min,(long)sec];
     
     if (_arcBgView.layer.sublayers.count>=2) {
         
@@ -130,8 +127,7 @@
         [_timer invalidate];
          _timer =nil;
       //弹窗提示
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"警告" message:@"times up!!" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
-       
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"警告" message:@"计时结束!" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
         
         [self.delegate SetController];
         [alert show];
