@@ -100,7 +100,7 @@
         [self.delegate alterViewDidEditIntheAlterView:self];
     }
     
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 }
 
 -(IBAction)clickMail
@@ -111,7 +111,7 @@
     }
     
 
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 }
 
 -(IBAction)clickSms
@@ -120,7 +120,7 @@
     {
         [self.delegate alterViewDidSmsIntheAlterView:self];
     }
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 }
 /*
 - (IBAction)clickEdit:(UIButton *)sender
@@ -130,7 +130,7 @@
         [self.delegate alterViewDidEditIntheAlterView:self];
     }
     
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 
 }
 
@@ -141,7 +141,7 @@
         [self.delegate alterViewDidMailIntheAlterView:self];
     }
     
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 
 }
 
@@ -151,7 +151,7 @@
     {
         [self.delegate alterViewDidSmsIntheAlterView:self];
     }
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
 
 }
  */

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--事项提醒-->
@@ -198,7 +198,6 @@
                                 </state>
                                 <connections>
                                     <action selector="choosePlatformLogIn:" destination="SLe-3c-tAP" eventType="touchUpInside" id="NfG-Eg-3N3"/>
-                                    <segue destination="Nfy-pM-Hw4" kind="modal" id="SP9-Yp-3j5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="uIx-GT-V3l">
@@ -243,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkY-CY-lwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3989" y="-1287"/>
+            <point key="canvasLocation" x="-3917" y="-1319"/>
         </scene>
         <!--Program Tab Bar Controller-->
         <scene sceneID="zc9-KU-k18">
@@ -266,7 +265,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nC4-hu-UJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3431" y="-1287"/>
+            <point key="canvasLocation" x="-3223" y="-1387"/>
         </scene>
         <!--纪念日提醒-->
         <scene sceneID="saY-6y-GGB">
@@ -543,10 +542,5 @@
         <image name="timebutton_nomal.png" width="40" height="40"/>
         <image name="timer_s" width="23" height="24"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <color key="tintColor" red="0.10980392160000001" green="0.51764705879999995" blue="0.87450980389999999" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
 </document>

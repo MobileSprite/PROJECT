@@ -120,6 +120,7 @@
         CurrentToken *currentToken = [CurrentToken new];
         
         currentToken.current_access_token = anyoneOauth.access_token;
+        
         [AccessTokenTool saveToFileWithAccessToken:currentToken];
         
         [AnyoneOauthTool acountSaveToFileWithOAuth:anyoneOauth];

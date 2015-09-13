@@ -145,7 +145,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     self.navigationController.navigationBar.tintColor = [UIColor greenColor];
     
-    NSLog(@"%@", self.navigationController.navigationBar.tintColor);
+    // NSLog(@"%@", self.navigationController.navigationBar.tintColor);
     
     
     [self groupWithArray:self.remaindArrays];
@@ -415,7 +415,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
     } completion:^(BOOL finished) {
         
-        NSLog(@"%@",NSStringFromCGRect(self.datePicker.frame));
+        // NSLog(@"%@",NSStringFromCGRect(self.datePicker.frame));
         
     }];
     
@@ -515,7 +515,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
                 [self makeAdds];
                 canAdd=NO;
                 
-                NSLog(@"group---%@",NSStringFromCGRect(self.groupPicker.frame));
+                // NSLog(@"group---%@",NSStringFromCGRect(self.groupPicker.frame));
                 
             }
         
@@ -535,9 +535,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 //    
 //    [self.tabelView reloadData];
 //    
-//    NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
+//    // NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
 //    
-//    NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
+//    // NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
 //    
 //}
 
@@ -546,8 +546,8 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 -(void)removeNote:(id)sender
 {
     
-    NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
-    NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
+    // NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
+    // NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
     [[UIApplication sharedApplication]cancelAllLocalNotifications];
     
 }
@@ -662,7 +662,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
 #warning modify data -1
     
-    NSLog(@"%@---%@",remain,cell.models);
+    // NSLog(@"%@---%@",remain,cell.models);
     
     NSIndexPath *indexpath = [NSIndexPath indexPathForRow:theRow inSection:theSection];
     
@@ -670,7 +670,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
     [self.tabelView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationMiddle];
     
-    NSLog(@"===%@",groupArray);
+    // NSLog(@"===%@",groupArray);
     
     [EventDataTool modifyDBModel:newModel];
     
@@ -695,7 +695,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     cell.rectSwitch.on = NO;
     
-    NSLog(@"dismissSwitch");
+    // NSLog(@"dismissSwitch");
     
 }
 
@@ -728,7 +728,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
         NewremainModle = [remainModel remainModelWithDic:inputDic];
         
-        NSLog(@"++%@++",NewremainModle);
+        // NSLog(@"++%@++",NewremainModle);
         
         for (remainModel * oldmodel in self.remaindArrays)
         {
@@ -782,7 +782,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     [self removeCover2:button];
     
-    NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
+    // NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
     
     
 }
@@ -1053,7 +1053,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
                 break;
         }
         
-        NSLog(@"+=+%@",groupInfo);
+        // NSLog(@"+=+%@",groupInfo);
         
     }else{
     
@@ -1075,7 +1075,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
             
         }
         
-        NSLog(@"&&&%d&&&",Interval);
+        // NSLog(@"&&&%d&&&",Interval);
 
         
     }
@@ -1390,8 +1390,8 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
 
     }
-//    NSLog(@"_remaindArrays%@",_remaindArrays);
-//    NSLog(@"groupArray%@",groupArray);
+//    // NSLog(@"_remaindArrays%@",_remaindArrays);
+//    // NSLog(@"groupArray%@",groupArray);
 }
 
 
@@ -1530,7 +1530,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 -(void)alterViewDidSmsIntheAlterView:(altView *)alterView
 {
-    NSLog(@"%s",__func__);
+    // NSLog(@"%s",__func__);
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     
@@ -1591,7 +1591,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
     }];
     
-    //    NSLog(@"%@",alterView.models);
+    //    // NSLog(@"%@",alterView.models);
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"MMddHHmm";
@@ -1674,7 +1674,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
 #warning modify date -3
     
-    NSLog(@"%@---",alterView.models);
+    // NSLog(@"%@---",alterView.models);
   
     [EventDataTool modifyDBModel:alterView.models];
     
@@ -1686,7 +1686,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     
     remainCell * cell = (remainCell *)[self.tabelView cellForRowAtIndexPath:indexPath];
     
-    NSLog(@"%@---%@",alterView.models,cell.models);
+    // NSLog(@"%@---%@",alterView.models,cell.models);
 
     [cell setSelected:NO animated:NO];
     
@@ -1805,7 +1805,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
         if ([model.groupInfo isEqualToString:[NSString stringWithFormat:@"%@", groupTitleArray[i]]])
         {
-//            NSLog(@"%@",groupTitleArray[i]);
+//            // NSLog(@"%@",groupTitleArray[i]);
             
             [temp addObject:model];
         }
@@ -2073,7 +2073,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     {
 //        [self performSelector:@selector(makeSwipeR:) withObject:nil];
         
-        NSLog(@"swipe");
+        // NSLog(@"swipe");
     }
     
     [sender removeFromSuperview];

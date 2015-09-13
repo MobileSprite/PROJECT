@@ -86,7 +86,7 @@
     appView  *view=(appView*) btn.superview;
     
 
-    NSLog(@"%@--被按下",view.app.name);
+    // NSLog(@"%@--被按下",view.app.name);
 }
 
 @end

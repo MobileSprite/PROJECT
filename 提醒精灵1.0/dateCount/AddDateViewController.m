@@ -225,7 +225,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:^{
         
-        NSLog(@"dismiss");
+        //NSLog(@"dismiss");
         
     }];
     

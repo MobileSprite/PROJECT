@@ -142,7 +142,7 @@
 
     NSDate *date =[dateFormatter dateFromString:model.date];
     
-    NSLog(@"%@---%@",date,[NSDate date]);
+    // // NSLog(@"%@---%@",date,[NSDate date]);
     
     dateFormatter.dateFormat = @"yyyyMMdd";
     
@@ -219,7 +219,7 @@
             }
             
         }
-        NSLog(@"%@",deleteModel);
+        // NSLog(@"%@",deleteModel);
         
         [ModelDataTool removeTimeData:deleteModel];
         
