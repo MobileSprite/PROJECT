@@ -69,12 +69,13 @@
                                             <action selector="clickGroup" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wfA-lR-OsB"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="Qyf-lK-kga" userLabel="事件记录">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Qyf-lK-kga" userLabel="事件记录">
                                         <rect key="frame" x="42" y="8" width="200" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <attributedString key="attributedText"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
@@ -139,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-2n-B8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2848" y="109"/>
+            <point key="canvasLocation" x="-3206" y="-235"/>
         </scene>
         <!--倒数计-->
         <scene sceneID="f2m-Ft-cuN">
@@ -176,6 +177,20 @@
             </objects>
             <point key="canvasLocation" x="-2735" y="-2191"/>
         </scene>
+        <!--About Author-->
+        <scene sceneID="8UU-84-Wnk">
+            <objects>
+                <viewController id="Hin-Nh-bHQ" customClass="AboutAuthor" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTP-Eu-NMw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mT0-fa-Wbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3430" y="-2278"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ug1-XZ-LRx">
             <objects>
@@ -191,10 +206,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b68-yo-mOI">
                                 <rect key="frame" x="88" y="196" width="145" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="快速登录" backgroundImage="BBtn">
+                                <state key="normal" title="快速登录">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.2633063041" green="0.7695097554" blue="0.94010416669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="choosePlatformLogIn:" destination="SLe-3c-tAP" eventType="touchUpInside" id="NfG-Eg-3N3"/>
@@ -203,8 +219,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="uIx-GT-V3l">
                                 <rect key="frame" x="88" y="267" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="微博登录" backgroundImage="default_btn">
+                                <state key="normal" title="微博登录">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -215,8 +232,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="63G-38-pU8">
                                 <rect key="frame" x="166" y="267" width="66" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="人人登录" backgroundImage="default_btn">
+                                <state key="normal" title="人人登录">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -242,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkY-CY-lwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3917" y="-1319"/>
+            <point key="canvasLocation" x="-3727" y="-1371"/>
         </scene>
         <!--Program Tab Bar Controller-->
         <scene sceneID="zc9-KU-k18">
@@ -265,7 +283,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nC4-hu-UJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3223" y="-1387"/>
+            <point key="canvasLocation" x="-3061" y="-1513"/>
         </scene>
         <!--纪念日提醒-->
         <scene sceneID="saY-6y-GGB">
@@ -312,7 +330,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="60" id="GdV-pT-Kps" customClass="DateCell">
-                                <rect key="frame" x="0.0" y="271" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="207" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GdV-pT-Kps" id="m46-I7-xYX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -525,9 +543,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BBtn" width="152" height="74"/>
         <image name="calender_s" width="23" height="24"/>
-        <image name="default_btn" width="70" height="33"/>
         <image name="enter2" width="640" height="960"/>
         <image name="groupbutton_disable.png" width="40" height="40"/>
         <image name="groupbutton_highlight@2x.png" width="400" height="58"/>

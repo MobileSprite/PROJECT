@@ -90,7 +90,7 @@
     NSString *oldDay = [oldDateFormatter stringFromDate:aDate];
     
     NSRange range = NSMakeRange(4, 4);
-    NSLog(@"%@",[nowDay substringWithRange:range]);
+//    NSLog(@"%@",[nowDay substringWithRange:range]);
     
     NSString *fireDay =[nowDay stringByReplacingCharactersInRange:range withString:oldDay];
     

@@ -976,13 +976,13 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         switch (row)
         {
             case 0:
-                s = @"never";
+                s = @"一次";
                 break;
             case 1:
-                s = @"dayly";
+                s = @"每天";
                 break;
             default:
-                s = @"weekly";
+                s = @"每周";
                 break;
         }
         

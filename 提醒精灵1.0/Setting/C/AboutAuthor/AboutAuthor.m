@@ -7,10 +7,15 @@
 //
 
 #import "AboutAuthor.h"
+#import "WebViewController.h"
 #include "Define.h"
 @interface AboutAuthor ()
 
+@property (nonatomic, strong, readwrite) UIImageView *imageView;
+@property (nonatomic, strong, readwrite) UIButton *button;
+
 -(void)addInformation;
+
 @end
 
 @implementation AboutAuthor
@@ -31,9 +36,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self addInformation];
+//    [self addInformation];
+    [self loadImageView];
+
+    [self loadButtonToWeb];
     
 }
+
+- (void) loadImageView {
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"iconView"]];
+    CGRect tempFrame = imageView.bounds;
+    tempFrame.size = CGSizeMake(220, 220);
+    imageView.bounds = tempFrame;
+    
+    imageView.center = self.view.center;
+    
+    self.imageView = imageView;
+    [self.view addSubview:imageView];
+    
+}
+
+- (void) loadButtonToWeb {
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 140, 44)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(0, 0, 140, 44);
+    button.center = CGPointMake(self.imageView.center.x, self.imageView.center.y + 150);
+    self.button = button;
+    [self.view addSubview:button];
+    [button setTitle:@"访问网站" forState: UIControlStateNormal];
+    [button setTintColor:[UIColor whiteColor]];
+    [button setBackgroundColor:[UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0]];
+    [button addTarget:self action:@selector(openWebsize) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+}
+
+- (void) openWebsize {
+    
+//    UIViewController * webViewController = (WebViewController *) [UINib nibWithNibName:@"WebViewController" bundle:nil];
+    
+    WebViewController *webViewController = [[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:webViewController animated:true];
+    
+
+}
+
+-(BOOL)hidesBottomBarWhenPushed
+{
+    
+    return YES;
+}
+
 -(void)addInformation{
     
  
@@ -76,8 +130,6 @@
     copyRight.font=[UIFont systemFontOfSize:10];
     
     [self.view addSubview:copyRight];
-    
-    
     
 }
 

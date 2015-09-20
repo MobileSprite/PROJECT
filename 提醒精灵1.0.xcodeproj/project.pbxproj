@@ -181,6 +181,8 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
+		602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B51961BAEE2AE0089E846 /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
+		602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B51971BAEE2AE0089E846 /* WebViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF281BA2F91500B0FAC4 /* emptyView.png */; };
 		6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF2A1BA300B700B0FAC4 /* emptyView2.png */; };
 		6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */; };
@@ -474,6 +476,9 @@
 		51FAA4671AA2CB5900123FDE /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		51FAA4761AA2CF7000123FDE /* EventDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTool.h; sourceTree = "<group>"; };
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
+		602B51951BAEE2AE0089E846 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		602B51961BAEE2AE0089E846 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		602B51971BAEE2AE0089E846 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		6045BF281BA2F91500B0FAC4 /* emptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView.png; sourceTree = "<group>"; };
 		6045BF2A1BA300B700B0FAC4 /* emptyView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView2.png; sourceTree = "<group>"; };
 		6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DatePickerLabel.h"; sourceTree = "<group>"; };
@@ -1131,6 +1136,9 @@
 			children = (
 				51D25C6C1AA732160044A7B0 /* AboutAuthor.h */,
 				51D25C6D1AA732160044A7B0 /* AboutAuthor.m */,
+				602B51951BAEE2AE0089E846 /* WebViewController.h */,
+				602B51961BAEE2AE0089E846 /* WebViewController.m */,
+				602B51971BAEE2AE0089E846 /* WebViewController.xib */,
 			);
 			path = AboutAuthor;
 			sourceTree = "<group>";
@@ -1353,6 +1361,7 @@
 				51071C5C1AD35B5900AE9BB5 /* share@2x.png in Resources */,
 				51071C441AD2D48900AE9BB5 /* 25.png in Resources */,
 				515A68D419E98236000FC00B /* 02.caf in Resources */,
+				602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */,
 				51BA1C0319F4222B002F8BF1 /* donebutton@2x.png in Resources */,
 				91D511A01AB0A4E500CDDFA8 /* groupbutton_highlight@2x.png in Resources */,
 				51071C461AD2D48900AE9BB5 /* 29.png in Resources */,
@@ -1475,6 +1484,7 @@
 				51D25C8E1AA732160044A7B0 /* SettingViewCell.m in Sources */,
 				51D25C8C1AA732160044A7B0 /* SettingItem.m in Sources */,
 				517721E11A878E1F006BBC67 /* AFHTTPSessionManager.m in Sources */,
+				602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */,
 				517721EE1A878E1F006BBC67 /* UIRefreshControl+AFNetworking.m in Sources */,
 				517722011A878E1F006BBC67 /* MJArgument.m in Sources */,
 				517DBC431A81D6FA00C8A8B6 /* FMDatabase.m in Sources */,

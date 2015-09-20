@@ -48,7 +48,6 @@
 
     // Do any additional setup after loading the view from its nib.
     
-    
     [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor lightGrayColor];
     
     [[UIApplication sharedApplication] cancelAllLocalNotifications];

@@ -69,13 +69,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self addGroup2];
 
     [self addGroup1];
     
 
     [self addGroup3];
-    
+    [self addGroup2];
+
     _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
     
     [_stretchableTableHeaderView stretchHeaderForTableView:self.tableView withView:self.HeadImageView];
@@ -97,7 +97,7 @@
 -(void)addGroup1
 {
     SettingItem *item1_0 = [SettingItem setupWithIcon:@"contacts" Title:@"应用评分"];
-    
+
 //    item1_0.icon
     
     item1_0.option = ^{
@@ -130,7 +130,7 @@
 
         
         
-        NSString *myText = @"请将你宝贵的意见告诉我们，我们会及时答复:";
+        NSString *myText = @"感谢您给予我们宝贵的意见，我们会及时答复:";
         
         
         NSMutableString * body = [NSMutableString stringWithString:myText];
@@ -179,6 +179,8 @@
     
     SettingGroup *group_1 = [[SettingGroup alloc]init];
     
+    group_1.headerTitle = @"欢迎,^_^";
+
     group_1.items = @[item1_0,item1_1];
     
     [self.groupArray addObject:group_1];
@@ -189,14 +191,13 @@
 
 -(void)addGroup2
 {
-    SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于作者" DestineClass:[AboutAuthor class]];
+    SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于我们" DestineClass:[AboutAuthor class]];
     
 //    SettingItem *item2_1 = [SettingItem setupWithIcon:@"box" Title:@"应用推荐" DestineClass:[AppCommend class]];
 
     
     SettingGroup *group_2 = [[SettingGroup alloc]init];
     
-    group_2.headerTitle = @"欢迎,^_^";
     
     group_2.items = @[item2_0];
     
@@ -449,12 +450,7 @@
     
 }
 
--(BOOL)hidesBottomBarWhenPushed
-{
-    self.navigationController.navigationBarHidden = NO;
-    
-    return NO;
-}
+
 
 
 -(void)featureControllerViewDismissBackToSourceController
