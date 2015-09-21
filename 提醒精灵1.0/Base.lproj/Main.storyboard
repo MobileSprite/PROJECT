@@ -140,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-2n-B8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3206" y="-235"/>
+            <point key="canvasLocation" x="-3178" y="-259"/>
         </scene>
         <!--倒数计-->
         <scene sceneID="f2m-Ft-cuN">
@@ -156,7 +156,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w55-g3-r96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2802" y="-676"/>
+            <point key="canvasLocation" x="-2690" y="-900"/>
         </scene>
         <!--事项提醒-->
         <scene sceneID="bro-gR-bUy">
@@ -176,20 +176,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrB-Rx-sSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2735" y="-2191"/>
-        </scene>
-        <!--About Author-->
-        <scene sceneID="8UU-84-Wnk">
-            <objects>
-                <viewController id="Hin-Nh-bHQ" customClass="AboutAuthor" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bTP-Eu-NMw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mT0-fa-Wbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3430" y="-2278"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ug1-XZ-LRx">
@@ -283,7 +269,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nC4-hu-UJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3061" y="-1513"/>
+            <point key="canvasLocation" x="-3189" y="-1414"/>
         </scene>
         <!--纪念日提醒-->
         <scene sceneID="saY-6y-GGB">
@@ -330,7 +316,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="60" id="GdV-pT-Kps" customClass="DateCell">
-                                <rect key="frame" x="0.0" y="207" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="271" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GdV-pT-Kps" id="m46-I7-xYX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -396,7 +382,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWF-ga-yh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2144" y="-1462"/>
+            <point key="canvasLocation" x="-2256" y="-1546"/>
         </scene>
         <!--纪念日提醒-->
         <scene sceneID="xXF-ta-l0h">
@@ -412,7 +398,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CM3-hj-gQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2678" y="-1414"/>
+            <point key="canvasLocation" x="-2690" y="-1546"/>
         </scene>
         <!--倒计时提醒-->
         <scene sceneID="RHo-ll-2wW">
@@ -500,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPi-xP-mWh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2253" y="-786"/>
+            <point key="canvasLocation" x="-2261" y="-888"/>
         </scene>
         <!--更多-->
         <scene sceneID="PUC-YX-7WZ">
@@ -539,7 +525,67 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p76-FV-LTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2436" y="79"/>
+            <point key="canvasLocation" x="-2696" y="-253"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="SWv-GP-dbg">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nkv-ql-VUj" customClass="PageViewController" customModule="Feature" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7K-ue-HAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3690" y="-2101"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="iuU-ov-Rhu">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apI-cy-NlU" customClass="PageContentViewController" customModule="Feature" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="34f-z4-97c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="S3O-0d-z6F">
+                                <rect key="frame" x="141" y="25" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4aL-cy-NZM">
+                                <rect key="frame" x="92" y="120" width="137" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="欢迎进入">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="apI-cy-NlU" eventType="touchUpInside" id="leN-g8-Iv0"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" id="xP6-cg-v5n">
+                                <rect key="frame" x="0.0" y="170" width="320" height="398"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计时提醒,做事更加效率" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QA1-RB-Xca">
+                                <rect key="frame" x="37" y="76" width="246.5" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.1551596784" green="0.60815983689999997" blue="0.90937407159999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="xP6-cg-v5n" id="dkE-q6-WDU"/>
+                        <outlet property="getStartedButton" destination="4aL-cy-NZM" id="U0g-7Y-cLV"/>
+                        <outlet property="headingLabel" destination="QA1-RB-Xca" id="Psn-Wz-y63"/>
+                        <outlet property="pageControl" destination="S3O-0d-z6F" id="3UX-tm-8xz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7RU-Ie-q6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3229" y="-2080"/>
         </scene>
     </scenes>
     <resources>

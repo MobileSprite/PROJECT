@@ -183,6 +183,8 @@
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
 		602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B51961BAEE2AE0089E846 /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B51971BAEE2AE0089E846 /* WebViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC731BB05A4E00F52270 /* PageContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		6034DC761BB05A4E00F52270 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC741BB05A4E00F52270 /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF281BA2F91500B0FAC4 /* emptyView.png */; };
 		6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF2A1BA300B700B0FAC4 /* emptyView2.png */; };
 		6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */; };
@@ -479,6 +481,9 @@
 		602B51951BAEE2AE0089E846 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		602B51961BAEE2AE0089E846 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		602B51971BAEE2AE0089E846 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		6034DC721BB05A4E00F52270 /* 提醒精灵1.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "提醒精灵1.0-Bridging-Header.h"; path = "功能介绍/提醒精灵1.0-Bridging-Header.h"; sourceTree = "<group>"; };
+		6034DC731BB05A4E00F52270 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		6034DC741BB05A4E00F52270 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		6045BF281BA2F91500B0FAC4 /* emptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView.png; sourceTree = "<group>"; };
 		6045BF2A1BA300B700B0FAC4 /* emptyView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView2.png; sourceTree = "<group>"; };
 		6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DatePickerLabel.h"; sourceTree = "<group>"; };
@@ -1040,6 +1045,7 @@
 				516FF3891A41A1BE00C1A7E2 /* TimeCount */,
 				51D25C691AA732160044A7B0 /* Setting */,
 				5177216C1A878E1E006BBC67 /* LogIn */,
+				6034DC711BB05A3F00F52270 /* 功能介绍 */,
 				511CD4EF19D4676900A78DC6 /* Other */,
 				6045BF281BA2F91500B0FAC4 /* emptyView.png */,
 				6045BF2A1BA300B700B0FAC4 /* emptyView2.png */,
@@ -1052,6 +1058,7 @@
 		5196051519D2D4E90022B343 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6034DC721BB05A4E00F52270 /* 提醒精灵1.0-Bridging-Header.h */,
 				91C0AE091AD25068009AA6DC /* Images.xcassets */,
 				517CBB211AD6B17C00A59717 /* Leads */,
 				5178DFFB19F1EABA008104F2 /* pic */,
@@ -1265,6 +1272,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		6034DC711BB05A3F00F52270 /* 功能介绍 */ = {
+			isa = PBXGroup;
+			children = (
+				6034DC731BB05A4E00F52270 /* PageContentViewController.swift */,
+				6034DC741BB05A4E00F52270 /* PageViewController.swift */,
+			);
+			path = "功能介绍";
+			sourceTree = "<group>";
+		};
 		91C851881ACAE70600D86758 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1325,6 +1341,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Program;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = wrcj;
 				TargetAttributes = {
@@ -1517,6 +1534,7 @@
 				517721EB1A878E1F006BBC67 /* UIButton+AFNetworking.m in Sources */,
 				517722091A878E1F006BBC67 /* NSObject+MJMember.m in Sources */,
 				51D25C8A1AA732160044A7B0 /* WRViewController.m in Sources */,
+				6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */,
 				517721E01A878E1F006BBC67 /* AFHTTPRequestOperationManager.m in Sources */,
 				519584251A8CC37E003619EF /* MBProgressHUD.m in Sources */,
 				511D8DD61A865D6800317359 /* FRDLivelyButton.m in Sources */,
@@ -1547,6 +1565,7 @@
 				51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */,
 				517721DA1A878E1F006BBC67 /* RenRenAccountTool.m in Sources */,
 				517722061A878E1F006BBC67 /* MJTypeEncoding.m in Sources */,
+				6034DC761BB05A4E00F52270 /* PageViewController.swift in Sources */,
 				517CCAA81A07778800F1092A /* DateCell.m in Sources */,
 				5196051F19D2D4E90022B343 /* ProgramAppDelegate.m in Sources */,
 				512CD2291AC951D50007DC36 /* AnyoneOauth.m in Sources */,
@@ -1681,15 +1700,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2LY4D54LT8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
 				INFOPLIST_FILE = "提醒精灵1.0/提醒精灵1.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/功能介绍/提醒精灵1.0-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1699,15 +1722,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2LY4D54LT8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
 				INFOPLIST_FILE = "提醒精灵1.0/提醒精灵1.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/功能介绍/提醒精灵1.0-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

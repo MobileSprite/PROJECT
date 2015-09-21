@@ -17,6 +17,7 @@
 
 #import "EventDataTool.h"
 #import "remainModel.h"
+#import "提醒精灵1.0-Bridging-Header.h"
 
 @interface ProgramAppDelegate ()<xAppDelegate>
 {
