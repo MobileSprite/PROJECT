@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--事项提醒-->
@@ -316,7 +316,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="60" id="GdV-pT-Kps" customClass="DateCell">
-                                <rect key="frame" x="0.0" y="271" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="207" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GdV-pT-Kps" id="m46-I7-xYX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -527,18 +527,10 @@
             </objects>
             <point key="canvasLocation" x="-2696" y="-253"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="SWv-GP-dbg">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nkv-ql-VUj" customClass="PageViewController" customModule="提醒精灵1_0" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7K-ue-HAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3690" y="-2101"/>
-        </scene>
         <!--Page Content View Controller-->
         <scene sceneID="iuU-ov-Rhu">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apI-cy-NlU" customClass="PageContentViewController" customModule="提醒精灵1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apI-cy-NlU" customClass="PageContentViewController" customModule="Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34f-z4-97c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +551,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="close:" destination="apI-cy-NlU" eventType="touchUpInside" id="leN-g8-Iv0"/>
+                                    <action selector="close:" destination="apI-cy-NlU" eventType="touchUpInside" id="tqJ-h4-C8B"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" id="xP6-cg-v5n">
@@ -587,6 +579,16 @@
             </objects>
             <point key="canvasLocation" x="-3229" y="-2080"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="lne-cR-yW9">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oDz-vG-kEm" customClass="PageViewController" customModule="Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6F-aK-386" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3544" y="-2180"/>
+        </scene>
     </scenes>
     <resources>
         <image name="calender_s" width="23" height="24"/>
@@ -604,5 +606,10 @@
         <image name="timebutton_nomal.png" width="40" height="40"/>
         <image name="timer_s" width="23" height="24"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
     <color key="tintColor" red="0.10980392160000001" green="0.51764705879999995" blue="0.87450980389999999" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
 </document>

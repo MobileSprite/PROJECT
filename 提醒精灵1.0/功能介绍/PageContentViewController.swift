@@ -7,7 +7,6 @@
 //
 
 import UIKit
-@objc (PageContentViewController)
 
 class PageContentViewController: UIViewController {
     @IBOutlet weak var headingLabel:UILabel!
@@ -35,17 +34,17 @@ class PageContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func close(sender: AnyObject) {
+        
+        let loginViewController = storyboard?.instantiateInitialViewController() as! WRLogInViewController
+        
+        UIApplication.sharedApplication().delegate!.window!!.rootViewController = loginViewController
+        
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: "hasViewedWalkthrough")
-
-        dismissViewControllerAnimated(true, completion: nil)
+        defaults.setBool(true, forKey: "hasLaunthed2")
+        defaults.synchronize()
+        
     }
     
-    @IBAction func nextScreen(sender: AnyObject) {
-        let pageViewController = self.parentViewController as! PageViewController
-        pageViewController.forward(index)
-    }
 
 }

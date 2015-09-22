@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@objc (PageViewController)
+//@objc (PageViewController)
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
@@ -64,26 +64,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         }
         
         return nil
-    }
-
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return pageHeadings.count
-//    }
-//    
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as? PageContentViewController {
-//
-//            return pageContentViewController.index
-//        }
-//        
-//        return 0
-//    }
-    
-    func forward(index: Int) {
-        
-        if let nextViewController = self.viewControllerAtIndex(index + 1) {
-            setViewControllers([nextViewController], direction: .Forward, animated: true, completion: nil)
-        }
     }
 
 }

@@ -25,6 +25,7 @@
 
 #import <MessageUI/MessageUI.h>
 
+
 //#import "UMSocial.h"
 
 @interface SettingItemController ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate,FeatureControllerDelegate>
@@ -193,8 +194,8 @@
 {
     SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于我们" DestineClass:[AboutAuthor class]];
     
-//    SettingItem *item2_1 = [SettingItem setupWithIcon:@"box" Title:@"应用推荐" DestineClass:[AppCommend class]];
 
+    
     
     SettingGroup *group_2 = [[SettingGroup alloc]init];
     
@@ -445,23 +446,10 @@
         NSError *error;
         [[NSFileManager defaultManager]removeItemAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"] error:&error];
         
-        
     }
     
 }
 
-
-
-
--(void)featureControllerViewDismissBackToSourceController
-{
-    
-    NSLog(@"%@",self.navigationController);
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    
-}
 
 #pragma mark 分享组件代理
 

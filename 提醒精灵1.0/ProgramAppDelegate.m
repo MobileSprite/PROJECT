@@ -17,7 +17,7 @@
 
 #import "EventDataTool.h"
 #import "remainModel.h"
-#import "提醒精灵1.0-Swift.h"
+#import "Reminder-Swift.h"
 
 @interface ProgramAppDelegate ()<xAppDelegate>
 {
@@ -39,28 +39,30 @@
 {
     // Override point for customization after application launch.
     
-    BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched"];
+    BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched2"];
     
     if (!hasLaunched) {
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
-        PageViewController *pageViewController = [story instantiateViewControllerWithIdentifier:@"PageViewController"];
+        PageViewController *pageViewController = (PageViewController *)[story instantiateViewControllerWithIdentifier:@"PageViewController"];
         
+        [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:244/255.0 alpha:1.0];
         
         [UIApplication sharedApplication].delegate.window.rootViewController = pageViewController; /// 这句话在其他VC也可以用
 
     }
+    
+    xViewController *controller =[[xViewController alloc]init];
+        controller.delegate =self;
+        
+    [SwitchControllerTool chooseRootViewController];
     
     
     
      UINavigationBar *bar = [UINavigationBar appearance];
     [bar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0]}];
-    
-    xViewController *controller =[[xViewController alloc]init];
-    controller.delegate =self;
-    
-    [SwitchControllerTool chooseRootViewController];
+
     
     noteCount = [application scheduledLocalNotifications].count;
     

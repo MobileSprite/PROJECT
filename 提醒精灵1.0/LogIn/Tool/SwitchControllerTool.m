@@ -33,6 +33,7 @@ typedef enum timeInterval{
 {
     CurrentToken *token = [AccessTokenTool getCurrentTokenFromFile];
     
+    
     if (token)
     {
         NSLog(@"%@",token.current_access_token);

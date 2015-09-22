@@ -100,7 +100,7 @@
 {
     [super layoutSubviews];
     
-    NSLog(@"%@",NSStringFromCGRect(self.frame));
+//    NSLog(@"%@",NSStringFromCGRect(self.frame));
 }
 
 -(void)setUpRightView

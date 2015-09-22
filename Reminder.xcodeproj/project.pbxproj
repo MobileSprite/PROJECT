@@ -181,10 +181,10 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
-		602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B51961BAEE2AE0089E846 /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
-		602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B51971BAEE2AE0089E846 /* WebViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC731BB05A4E00F52270 /* PageContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		6034DC761BB05A4E00F52270 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC741BB05A4E00F52270 /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B51961BAEE2AE0089E846 /* WebViewController.m */; };
+		602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B51971BAEE2AE0089E846 /* WebViewController.xib */; };
+		6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC731BB05A4E00F52270 /* PageContentViewController.swift */; };
+		6034DC761BB05A4E00F52270 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC741BB05A4E00F52270 /* PageViewController.swift */; };
 		6045BF291BA2F91500B0FAC4 /* emptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF281BA2F91500B0FAC4 /* emptyView.png */; };
 		6045BF2B1BA300B700B0FAC4 /* emptyView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045BF2A1BA300B700B0FAC4 /* emptyView2.png */; };
 		6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */; };
@@ -403,20 +403,20 @@
 		519584201A8CC37E003619EF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		519584211A8CC37E003619EF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		519584221A8CC37E003619EF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		5196050B19D2D4E90022B343 /* 提醒精灵1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "提醒精灵1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5196050B19D2D4E90022B343 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196050E19D2D4E90022B343 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5196051019D2D4E90022B343 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5196051219D2D4E90022B343 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5196051619D2D4E90022B343 /* 提醒精灵1.0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "提醒精灵1.0-Info.plist"; sourceTree = "<group>"; };
+		5196051619D2D4E90022B343 /* Reminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reminder-Info.plist"; sourceTree = "<group>"; };
 		5196051819D2D4E90022B343 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5196051A19D2D4E90022B343 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5196051C19D2D4E90022B343 /* 提醒精灵1.0-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "提醒精灵1.0-Prefix.pch"; sourceTree = "<group>"; };
+		5196051C19D2D4E90022B343 /* Reminder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reminder-Prefix.pch"; sourceTree = "<group>"; };
 		5196051D19D2D4E90022B343 /* ProgramAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramAppDelegate.h; sourceTree = "<group>"; };
 		5196051E19D2D4E90022B343 /* ProgramAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgramAppDelegate.m; sourceTree = "<group>"; };
 		5196052119D2D4E90022B343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5196052C19D2D4E90022B343 /* 提醒精灵1.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "提醒精灵1.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5196052C19D2D4E90022B343 /* ReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196052D19D2D4E90022B343 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5196053519D2D4E90022B343 /* 提醒精灵1.0Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "提醒精灵1.0Tests-Info.plist"; sourceTree = "<group>"; };
+		5196053519D2D4E90022B343 /* ReminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReminderTests-Info.plist"; sourceTree = "<group>"; };
 		5196053719D2D4E90022B343 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5196053919D2D4E90022B343 /* ____1_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____1_0Tests.m"; sourceTree = "<group>"; };
 		5196054619D2E7280022B343 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
@@ -488,6 +488,7 @@
 		6045BF2A1BA300B700B0FAC4 /* emptyView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView2.png; sourceTree = "<group>"; };
 		6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DatePickerLabel.h"; sourceTree = "<group>"; };
 		6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DatePickerLabel.m"; sourceTree = "<group>"; };
+		60FEFE161BB1A208006A7167 /* Reminder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Reminder-Bridging-Header.h"; path = "../Reminder-Bridging-Header.h"; sourceTree = "<group>"; };
 		91BB4F5E1AD27AE4008A98CD /* app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
 		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91C851891ACAE70600D86758 /* AppCommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommend.h; sourceTree = "<group>"; };
@@ -629,7 +630,7 @@
 				511CD4E819D4316C00A78DC6 /* MusicList.plist */,
 				91BB4F5E1AD27AE4008A98CD /* app.plist */,
 				511CD4EA19D43CFA00A78DC6 /* CountsList.plist */,
-				5196051619D2D4E90022B343 /* 提醒精灵1.0-Info.plist */,
+				5196051619D2D4E90022B343 /* Reminder-Info.plist */,
 				5108667D19F1EFBE00528A86 /* remainTimes.plist */,
 			);
 			name = plist;
@@ -1018,8 +1019,8 @@
 		5196050C19D2D4E90022B343 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5196050B19D2D4E90022B343 /* 提醒精灵1.0.app */,
-				5196052C19D2D4E90022B343 /* 提醒精灵1.0Tests.xctest */,
+				5196050B19D2D4E90022B343 /* Reminder.app */,
+				5196052C19D2D4E90022B343 /* ReminderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1067,7 +1068,7 @@
 				515A68C619E98236000FC00B /* sound */,
 				5196051719D2D4E90022B343 /* InfoPlist.strings */,
 				5196051A19D2D4E90022B343 /* main.m */,
-				5196051C19D2D4E90022B343 /* 提醒精灵1.0-Prefix.pch */,
+				5196051C19D2D4E90022B343 /* Reminder-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1084,7 +1085,7 @@
 		5196053419D2D4E90022B343 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5196053519D2D4E90022B343 /* 提醒精灵1.0Tests-Info.plist */,
+				5196053519D2D4E90022B343 /* ReminderTests-Info.plist */,
 				5196053619D2D4E90022B343 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1277,6 +1278,7 @@
 			children = (
 				6034DC731BB05A4E00F52270 /* PageContentViewController.swift */,
 				6034DC741BB05A4E00F52270 /* PageViewController.swift */,
+				60FEFE161BB1A208006A7167 /* Reminder-Bridging-Header.h */,
 			);
 			path = "功能介绍";
 			sourceTree = "<group>";
@@ -1299,9 +1301,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5196050A19D2D4E90022B343 /* 提醒精灵1.0 */ = {
+		5196050A19D2D4E90022B343 /* Reminder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5196053D19D2D4E90022B343 /* Build configuration list for PBXNativeTarget "提醒精灵1.0" */;
+			buildConfigurationList = 5196053D19D2D4E90022B343 /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
 				5196050719D2D4E90022B343 /* Sources */,
 				5196050819D2D4E90022B343 /* Frameworks */,
@@ -1311,14 +1313,14 @@
 			);
 			dependencies = (
 			);
-			name = "提醒精灵1.0";
+			name = Reminder;
 			productName = "提醒精灵1.0";
-			productReference = 5196050B19D2D4E90022B343 /* 提醒精灵1.0.app */;
+			productReference = 5196050B19D2D4E90022B343 /* Reminder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5196052B19D2D4E90022B343 /* 提醒精灵1.0Tests */ = {
+		5196052B19D2D4E90022B343 /* ReminderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5196054019D2D4E90022B343 /* Build configuration list for PBXNativeTarget "提醒精灵1.0Tests" */;
+			buildConfigurationList = 5196054019D2D4E90022B343 /* Build configuration list for PBXNativeTarget "ReminderTests" */;
 			buildPhases = (
 				5196052819D2D4E90022B343 /* Sources */,
 				5196052919D2D4E90022B343 /* Frameworks */,
@@ -1329,9 +1331,9 @@
 			dependencies = (
 				5196053219D2D4E90022B343 /* PBXTargetDependency */,
 			);
-			name = "提醒精灵1.0Tests";
+			name = ReminderTests;
 			productName = "提醒精灵1.0Tests";
-			productReference = 5196052C19D2D4E90022B343 /* 提醒精灵1.0Tests.xctest */;
+			productReference = 5196052C19D2D4E90022B343 /* ReminderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1350,7 +1352,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5196050619D2D4E90022B343 /* Build configuration list for PBXProject "提醒精灵1.0" */;
+			buildConfigurationList = 5196050619D2D4E90022B343 /* Build configuration list for PBXProject "Reminder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1364,8 +1366,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5196050A19D2D4E90022B343 /* 提醒精灵1.0 */,
-				5196052B19D2D4E90022B343 /* 提醒精灵1.0Tests */,
+				5196050A19D2D4E90022B343 /* Reminder */,
+				5196052B19D2D4E90022B343 /* ReminderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1590,7 +1592,7 @@
 /* Begin PBXTargetDependency section */
 		5196053219D2D4E90022B343 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5196050A19D2D4E90022B343 /* 提醒精灵1.0 */;
+			target = 5196050A19D2D4E90022B343 /* Reminder */;
 			targetProxy = 5196053119D2D4E90022B343 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1703,16 +1705,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2LY4D54LT8)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
-				INFOPLIST_FILE = "提醒精灵1.0/提醒精灵1.0-Info.plist";
+				GCC_PREFIX_HEADER = "提醒精灵1.0/Reminder-Prefix.pch";
+				INFOPLIST_FILE = "提醒精灵1.0/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/功能介绍/提醒精灵1.0-Bridging-Header.h";
+				PRODUCT_NAME = Reminder;
+				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/Reminder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1725,16 +1728,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2LY4D54LT8)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
-				INFOPLIST_FILE = "提醒精灵1.0/提醒精灵1.0-Info.plist";
+				GCC_PREFIX_HEADER = "提醒精灵1.0/Reminder-Prefix.pch";
+				INFOPLIST_FILE = "提醒精灵1.0/Reminder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/功能介绍/提醒精灵1.0-Bridging-Header.h";
+				PRODUCT_NAME = Reminder;
+				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/Reminder-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1742,21 +1746,21 @@
 		5196054119D2D4E90022B343 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/提醒精灵1.0.app/提醒精灵1.0";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Reminder.app/Reminder";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
+				GCC_PREFIX_HEADER = "提醒精灵1.0/Reminder-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "提醒精灵1.0Tests/提醒精灵1.0Tests-Info.plist";
+				INFOPLIST_FILE = "提醒精灵1.0Tests/ReminderTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "wrcj12138.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReminderTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1765,17 +1769,17 @@
 		5196054219D2D4E90022B343 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/提醒精灵1.0.app/提醒精灵1.0";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Reminder.app/Reminder";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "提醒精灵1.0/提醒精灵1.0-Prefix.pch";
-				INFOPLIST_FILE = "提醒精灵1.0Tests/提醒精灵1.0Tests-Info.plist";
+				GCC_PREFIX_HEADER = "提醒精灵1.0/Reminder-Prefix.pch";
+				INFOPLIST_FILE = "提醒精灵1.0Tests/ReminderTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "wrcj12138.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReminderTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1784,7 +1788,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5196050619D2D4E90022B343 /* Build configuration list for PBXProject "提醒精灵1.0" */ = {
+		5196050619D2D4E90022B343 /* Build configuration list for PBXProject "Reminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5196053B19D2D4E90022B343 /* Debug */,
@@ -1793,7 +1797,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5196053D19D2D4E90022B343 /* Build configuration list for PBXNativeTarget "提醒精灵1.0" */ = {
+		5196053D19D2D4E90022B343 /* Build configuration list for PBXNativeTarget "Reminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5196053E19D2D4E90022B343 /* Debug */,
@@ -1802,7 +1806,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5196054019D2D4E90022B343 /* Build configuration list for PBXNativeTarget "提醒精灵1.0Tests" */ = {
+		5196054019D2D4E90022B343 /* Build configuration list for PBXNativeTarget "ReminderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5196054119D2D4E90022B343 /* Debug */,
