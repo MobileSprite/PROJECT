@@ -7,6 +7,7 @@
 //
 
 import UIKit
+@objc (PageContentViewController)
 
 class PageContentViewController: UIViewController {
     @IBOutlet weak var headingLabel:UILabel!

@@ -530,7 +530,7 @@
         <!--Page View Controller-->
         <scene sceneID="SWv-GP-dbg">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nkv-ql-VUj" customClass="PageViewController" customModule="Feature" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nkv-ql-VUj" customClass="PageViewController" customModule="提醒精灵1_0" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7K-ue-HAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3690" y="-2101"/>
@@ -538,7 +538,7 @@
         <!--Page Content View Controller-->
         <scene sceneID="iuU-ov-Rhu">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apI-cy-NlU" customClass="PageContentViewController" customModule="Feature" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apI-cy-NlU" customClass="PageContentViewController" customModule="提醒精灵1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34f-z4-97c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

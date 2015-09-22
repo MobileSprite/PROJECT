@@ -7,6 +7,7 @@
 //
 
 import UIKit
+@objc (PageViewController)
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 

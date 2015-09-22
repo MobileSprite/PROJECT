@@ -17,7 +17,7 @@
 
 #import "EventDataTool.h"
 #import "remainModel.h"
-#import "提醒精灵1.0-Bridging-Header.h"
+#import "提醒精灵1.0-Swift.h"
 
 @interface ProgramAppDelegate ()<xAppDelegate>
 {
@@ -39,10 +39,18 @@
 {
     // Override point for customization after application launch.
     
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    [self.window makeKeyAndVisible];
-//    self.window.rootViewController = logViewController;
-//    [UMSocialData setAppKey:@"5521ead4fd98c57ecd000424"];
+    BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched"];
+    
+    if (!hasLaunched) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        PageViewController *pageViewController = [story instantiateViewControllerWithIdentifier:@"PageViewController"];
+        
+        
+        [UIApplication sharedApplication].delegate.window.rootViewController = pageViewController; /// 这句话在其他VC也可以用
+
+    }
+    
     
     
      UINavigationBar *bar = [UINavigationBar appearance];

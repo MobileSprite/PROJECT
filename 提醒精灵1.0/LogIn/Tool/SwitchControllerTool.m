@@ -41,8 +41,6 @@ typedef enum timeInterval{
         
         ProgramTabBarController *proVc = [story instantiateViewControllerWithIdentifier:@"mainController"];
         
-        NSLog(@"%@",[UIApplication sharedApplication].keyWindow.rootViewController);
-        NSLog(@"%@",[UIApplication sharedApplication].delegate.window.rootViewController);
 
         [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
         
