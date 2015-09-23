@@ -481,7 +481,6 @@
 		602B51951BAEE2AE0089E846 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		602B51961BAEE2AE0089E846 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		602B51971BAEE2AE0089E846 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		6034DC721BB05A4E00F52270 /* 提醒精灵1.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "提醒精灵1.0-Bridging-Header.h"; path = "功能介绍/提醒精灵1.0-Bridging-Header.h"; sourceTree = "<group>"; };
 		6034DC731BB05A4E00F52270 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		6034DC741BB05A4E00F52270 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		6045BF281BA2F91500B0FAC4 /* emptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyView.png; sourceTree = "<group>"; };
@@ -1059,7 +1058,6 @@
 		5196051519D2D4E90022B343 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6034DC721BB05A4E00F52270 /* 提醒精灵1.0-Bridging-Header.h */,
 				91C0AE091AD25068009AA6DC /* Images.xcassets */,
 				517CBB211AD6B17C00A59717 /* Leads */,
 				5178DFFB19F1EABA008104F2 /* pic */,

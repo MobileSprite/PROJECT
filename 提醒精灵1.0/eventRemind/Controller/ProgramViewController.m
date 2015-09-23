@@ -125,9 +125,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 -(void)groupWithArray:(NSMutableArray*)remainArray;
 
-
-
-
 @end
 
 @implementation ProgramViewController
@@ -140,6 +137,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
     
     [self viewDidLoadState];
     

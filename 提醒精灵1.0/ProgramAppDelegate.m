@@ -42,6 +42,23 @@
     BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched2"];
     
     if (!hasLaunched) {
+        
+        NSString *version = [[UIDevice currentDevice] systemVersion];
+        if ([version doubleValue] >= 9.0) {
+            NSUserActivity *activity = [[NSUserActivity alloc]initWithActivityType:@"com.wrcj12138"];
+            
+            activity.keywords =[[NSSet alloc]initWithArray:@[@"纪念日",@"事项提醒",@"倒计时",@"事务提醒"]];
+            activity.eligibleForSearch = YES;
+            activity.title = @"你的生活提醒助手";
+            
+            
+            self.userActivity = activity;
+            activity.eligibleForHandoff = NO;
+            
+            [activity becomeCurrent];
+            
+        }
+        
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         PageViewController *pageViewController = (PageViewController *)[story instantiateViewControllerWithIdentifier:@"PageViewController"];
