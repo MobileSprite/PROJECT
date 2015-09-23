@@ -16,7 +16,8 @@
 
 #define RemindTime -2.5*60*60
 
-#define aDay 86400
+#define aDay 
+@import CoreSpotlight;
 
 @interface AddDateViewController ()<UITextFieldDelegate>
 
@@ -117,6 +118,8 @@
         }
         
         [ModelDataTool addTimeData:model];
+        
+//        [self addIndexWith:model];
     
         [self addNoteWith:model];
         

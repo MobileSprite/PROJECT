@@ -426,8 +426,6 @@
         
 #warning ----dateCount update----------
         
-        NSLog(@"------------1002----------");
-        
     }
     
     if (alertView.tag == 1003)
@@ -439,6 +437,7 @@
     
     
 }
+
 -(void)SetController
 {
     isAlert =YES;
@@ -449,6 +448,11 @@
     [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
 }
 
-
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    
+    NSLog(@"continueUserActivity");
+    return YES;
+    
+}
 
 @end

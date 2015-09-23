@@ -18,6 +18,7 @@
 #define fileName     [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"dateModels.archive"]
 
 
+@import CoreSpotlight;
 
 @interface DateTableViewController ()<AddDateViewControllerDelegate>
 
@@ -139,16 +140,41 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     
     dateFormatter.dateFormat = @"yyyyMMdd";
-
+    
+    
     NSDate *date =[dateFormatter dateFromString:model.date];
     
-    // // NSLog(@"%@---%@",date,[NSDate date]);
-    
-    dateFormatter.dateFormat = @"yyyyMMdd";
+    [self addIndexWith:model AndDate:date];
     
     [self.dateArray addObject:model];
     
     [self.tableView reloadData];
+    
+}
+
+#pragma mark - addIndexWith CoreSpotlight API
+- (void) addIndexWith:(DateModel *)model AndDate:(NSDate *)date{
+    CSSearchableItemAttributeSet *set = [[CSSearchableItemAttributeSet alloc]initWithItemContentType:@"text"];
+    NSString *content =  model.dateText;
+    NSString *dateString = model.date;
+    NSString *ID = model.identity;
+    NSLog(@"%@--%@---%@",content,ID,date);
+    set.keywords = @[@"生日",@"假日",@"holiday",content];
+    
+    set.title = @"特殊的一天";
+    
+    //TODO: 处理过长的几点信息.
+    set.contentDescription = [NSString stringWithFormat:@"上一次打开时,距离%@FSDFSDFSDFFSDFSDFSDFSDFS还有%d天",content,(int)([NSDate dateCountWithTheDate:date]+1)];
+    
+    CSSearchableItem *item = [[CSSearchableItem alloc]initWithUniqueIdentifier:ID domainIdentifier:@"DateCount" attributeSet:set];
+    
+    CSSearchableIndex *index = [CSSearchableIndex defaultSearchableIndex];
+    [index indexSearchableItems:@[item] completionHandler:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"%@",error);
+            return;
+        }
+    }];
     
 }
 
@@ -228,7 +254,12 @@
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-
+        [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithIdentifiers:@[deleteModel.identity] completionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"indeError: %@ ",error);
+                return;
+            }
+        }];
 
 
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {

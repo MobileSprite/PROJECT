@@ -131,7 +131,7 @@
 
         
         
-        NSString *myText = @"感谢您给予我们宝贵的意见，我们会及时答复:";
+        NSString *myText = @"感谢您给予宝贵的意见，会及时答复:";
         
         
         NSMutableString * body = [NSMutableString stringWithString:myText];
@@ -192,7 +192,7 @@
 
 -(void)addGroup2
 {
-    SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于我们" DestineClass:[AboutAuthor class]];
+    SettingItem *item2_0 = [SettingItem setupWithIcon:@"card" Title:@"关于作者" DestineClass:[AboutAuthor class]];
     
 
     

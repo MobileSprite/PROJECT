@@ -31,16 +31,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self drawRound];
-    //self.view.backgroundColor =[UIColor grayColor];
-    
-    //设置button样式
-//     NSLog(@"superView==%@",self.view);
+
     
     _pauseBtn.enabled=NO;
     _cancleBtn.enabled=NO;
     
-    [_pauseBtn setTitle:@"暂停" forState:UIControlStateNormal];
-    [_pauseBtn setTitle:@"继续" forState:UIControlStateSelected];
     self.view.backgroundColor = [UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0];
    
     [self timeChange:self.DatePicker];
@@ -155,7 +150,6 @@
 - (IBAction)pause:(id)sender {
     
     
-  
     if ( isPause==NO && _timer!=nil) {
           NSLog(@"pause1");
         _timerLable.tag = _totlaTime;
@@ -164,10 +158,8 @@
         [self cancleNote];
         isPause=YES;
         _pauseBtn.selected=YES;
-    }else if
-    (isPause == YES)
-    {
-          NSLog(@"pause2");
+    }else if (isPause == YES) {
+        NSLog(@"pause2");
         isPause =NO;
         _pauseBtn.selected=NO;
         _totlaTime =_timerLable.tag;
@@ -183,9 +175,7 @@
 - (IBAction)cancle:(id)sender {
     
     
-    //NSLog(@"%d",_startBtn.tag);
    if ((isPause==NO&& _startBtn.tag!=0)||isPause ==YES) {
-       // NSLog(@"cancle");
        
        _pauseBtn.enabled=NO;
        _cancleBtn.enabled=NO;
@@ -197,15 +187,14 @@
         [_timer invalidate];
         _timer =nil;
         _timerLable.text=@"开始计时";
-       // [_arcLayer removeAnimationForKey:@"key"];
-       // self.startBtn.enabled=YES;
+
        isPause =NO;
        _startBtn.tag=0;
        _timerLable.tag=0;
        _pauseBtn.selected=NO;
        [progress removeFromSuperview];
-//       NSLog(@"count ===%d",_arcBgView.layer.sublayers.count);
-    }
+
+   }
     
     
 }
@@ -229,8 +218,6 @@
 
     self.notification.fireDate = [[NSDate date]dateByAddingTimeInterval:totalT-1];
         
-//    NSLog(@"date ==%@",[NSDate date]);
-//    NSLog(@"note ==%@",_notification.fireDate);
     
     self.notification.repeatInterval=0;
    self.notification.alertBody=@"计时已到，请查看。";
@@ -262,12 +249,7 @@
 -(void) drawRound
 {
     
-//    if (_arcBgView.layer.sublayers.count>2) {
-//        
-//        [[_arcBgView.layer.sublayers lastObject]removeFromSuperlayer];
-//        
-//    }
-    
+
     UIBezierPath *path = [UIBezierPath bezierPath];
     
     CGRect rect = _arcBgView.frame;
@@ -293,15 +275,9 @@
 -(void)progressCirclie :(CGFloat)totaltime;
 {
     
-    
 
     progress =[[ CircleprocessVie alloc] initWithFrame:CGRectMake(0,0, 176, 144)];
-   /*
-    NSLog(@"-----%f %f",progress.layer.position.x,progress.layer.position.y);
-    NSLog(@"======%f %f",_arcBgView.frame.origin.x,_arcBgView.frame.origin.y);
-    NSLog(@"11111%@",progress);
-    NSLog(@"222222%@",_arcBgView);
-    */
+
     
     progress.trackColor=[UIColor colorWithWhite:1 alpha:0.5];
     progress.progressColor =[UIColor colorWithRed:46.0/255.0 green:169.0/255.0 blue:230.0/255.0 alpha:1];
@@ -312,53 +288,6 @@
     
     [_arcBgView addSubview:progress];
     
-//    NSLog(@"%d",_arcBgView.subviews.count);
 }
 
-/*
--(void)drawLineAnimation:(CALayer*)layer
-{
-    
-    
-   
-    CABasicAnimation *bas=[CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    bas.duration=_totlaTime;
-    bas.delegate=self;
-    bas.fromValue=[NSNumber numberWithInteger:0];
-    bas.toValue=[NSNumber numberWithInteger:1];
-    [layer addAnimation:bas forKey:@"key"];
-        
-}
- 
-
--(void)pauseLayer:(CALayer *)layer
-{
-    CFTimeInterval pausTime=[layer convertTime:CACurrentMediaTime() fromLayer:nil];
-    layer.speed=0.0;
-    layer.timeOffset =pausTime;
-    
-}
-
--(void)resumeLayer:(CALayer *)layer interval:(NSInteger)interval
-{
-    CFTimeInterval pauseTime =[layer timeOffset];
-    layer.speed =1.0;
-    layer.timeOffset =10.0;
-    layer.beginTime =0.0;
-    CFTimeInterval timeSincePause =[layer convertTime:CACurrentMediaTime() fromLayer:nil]-pauseTime;
-    layer.beginTime =timeSincePause+interval;
-}
--(void)addCircle
-{
-    
-   _arcLayer.beginTime -=2;
-//    NSLog(@"beginTime 2== %f",_arcLayer.beginTime);
-    
-}
-
-- (IBAction)doSome:(UIButton *)sender {
-    _arcLayer.beginTime-=2;
-//     NSLog(@"beginTime 3== %f",_arcLayer.beginTime);
-}
- */
 @end

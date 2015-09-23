@@ -32,10 +32,7 @@
 -(void)creatNotification:(NSInteger )totalT;
 -(void)cancleNote;
 -(void) drawRound;
-//-(void)drawLineAnimation:(CALayer*)layer;
-//-(void)pauseLayer:(CALayer *)layer;
-//-(void)addCircle;
-//-(void)resumeLayer:(CALayer *)layer interval:(NSInteger)interval;
+
 @property (weak, nonatomic) IBOutlet UILabel *timerLable;
 @property(nonatomic,strong) UILocalNotification * notification;
 @property (nonatomic ,assign)NSInteger totlaTime;

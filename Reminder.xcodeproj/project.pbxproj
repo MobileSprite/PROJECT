@@ -124,6 +124,7 @@
 		51FAA4701AA2CB5900123FDE /* remainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FAA4651AA2CB5900123FDE /* remainCell.xib */; };
 		51FAA4711AA2CB5900123FDE /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4671AA2CB5900123FDE /* SevenSwitch.m */; };
 		51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA4771AA2CF7000123FDE /* EventDataTool.m */; };
+		6026AEA61BB2FFEA0071CA27 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6026AEA51BB2FFEA0071CA27 /* CoreSpotlight.framework */; };
 		602B51981BAEE2AE0089E846 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B51961BAEE2AE0089E846 /* WebViewController.m */; };
 		602B51991BAEE2AE0089E846 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B51971BAEE2AE0089E846 /* WebViewController.xib */; };
 		6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC731BB05A4E00F52270 /* PageContentViewController.swift */; };
@@ -353,6 +354,7 @@
 		51FAA4671AA2CB5900123FDE /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		51FAA4761AA2CF7000123FDE /* EventDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTool.h; sourceTree = "<group>"; };
 		51FAA4771AA2CF7000123FDE /* EventDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTool.m; sourceTree = "<group>"; };
+		6026AEA51BB2FFEA0071CA27 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		602B51951BAEE2AE0089E846 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		602B51961BAEE2AE0089E846 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		602B51971BAEE2AE0089E846 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6026AEA61BB2FFEA0071CA27 /* CoreSpotlight.framework in Frameworks */,
 				5170BA181A80DD7C00E052B6 /* libsqlite3.dylib in Frameworks */,
 				516DEF0F19FA7CD80098E051 /* MessageUI.framework in Frameworks */,
 				5196051119D2D4E90022B343 /* CoreGraphics.framework in Frameworks */,
@@ -810,6 +813,7 @@
 		5196050D19D2D4E90022B343 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6026AEA51BB2FFEA0071CA27 /* CoreSpotlight.framework */,
 				5170BA171A80DD7C00E052B6 /* libsqlite3.dylib */,
 				516DEF0E19FA7CD80098E051 /* MessageUI.framework */,
 				5196050E19D2D4E90022B343 /* Foundation.framework */,
