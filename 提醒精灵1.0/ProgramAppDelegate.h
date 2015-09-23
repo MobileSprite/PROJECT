@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "UMSocial.h"
 
 @interface ProgramAppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate>
 {

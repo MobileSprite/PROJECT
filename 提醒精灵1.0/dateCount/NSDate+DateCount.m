@@ -69,7 +69,7 @@
         interval = [aDate timeIntervalSinceDate:nowT];
     }
     
-    return abs(round(interval/aDay));
+    return fabs(round(interval/aDay));
 }
 
 +(NSDate *)setFireDateWithTheDate:(NSDate *)aDate

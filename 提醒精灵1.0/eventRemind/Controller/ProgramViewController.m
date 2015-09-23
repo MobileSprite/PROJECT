@@ -119,10 +119,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 -(IBAction)clickGroup;
 
--(IBAction)clickReload:(UIButton *)sender;
-
--(IBAction)removeNote:(id)sender;
-
 -(void)groupWithArray:(NSMutableArray*)remainArray;
 
 @end
@@ -2087,9 +2083,5 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     return YES;
 }
 
--(void)clickReload:(UIButton *)sender
-{
-    
-}
 
 @end

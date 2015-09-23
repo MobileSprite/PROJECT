@@ -79,7 +79,7 @@
     
     logView.delegate = self;
     
-    [MBProgressHUD showMessage:@"loading"];
+    [MBProgressHUD showMessage:@"加载中"];
 
     [logView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=3148302791&redirect_uri=http://www.baidu.com"]]];
     

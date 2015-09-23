@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SLe-3c-tAP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--事项提醒-->
@@ -36,7 +36,7 @@
                                         <rect key="frame" x="351" y="19" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" image="muiscbutton_nomal.png"/>
+                                        <state key="normal" image="muiscbutton_nomal"/>
                                         <state key="disabled" image="musicbutton_disable.png"/>
                                         <state key="highlighted" image="muiscbutton_highlight.png"/>
                                         <connections>
@@ -130,7 +130,7 @@
         <scene sceneID="XOC-4U-uMc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="kZZ-o0-bqP" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" image="more_s" id="HbE-uQ-QXh"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="more" id="HbE-uQ-QXh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fgC-0o-ly5">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -146,7 +146,7 @@
         <scene sceneID="f2m-Ft-cuN">
             <objects>
                 <navigationController storyboardIdentifier="countcontroller" definesPresentationContext="YES" id="JAr-Zz-eK6" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="倒数计" image="timer_s" id="xdG-HL-iDj"/>
+                    <tabBarItem key="tabBarItem" title="倒数计" image="timer29" id="xdG-HL-iDj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KD6-jT-PPK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -162,7 +162,7 @@
         <scene sceneID="bro-gR-bUy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E1L-tH-zB0" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="事项提醒" image="items_s2" id="xnU-Ih-vs6"/>
+                    <tabBarItem key="tabBarItem" title="事项提醒" image="items" id="xnU-Ih-vs6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kON-EL-dLq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -316,7 +316,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="60" id="GdV-pT-Kps" customClass="DateCell">
-                                <rect key="frame" x="0.0" y="207" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="271" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GdV-pT-Kps" id="m46-I7-xYX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -388,7 +388,7 @@
         <scene sceneID="xXF-ta-l0h">
             <objects>
                 <navigationController definesPresentationContext="YES" id="FDU-VB-Dqw" customClass="ProgramNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="纪念日提醒" image="calender_s" id="2DT-3b-iZO"/>
+                    <tabBarItem key="tabBarItem" title="纪念日提醒" image="calender" id="2DT-3b-iZO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LZD-VG-gMO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -591,25 +591,20 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calender_s" width="23" height="24"/>
+        <image name="calender" width="22" height="21"/>
         <image name="enter2" width="640" height="960"/>
         <image name="groupbutton_disable.png" width="40" height="40"/>
         <image name="groupbutton_highlight@2x.png" width="400" height="58"/>
         <image name="groupbutton_nomal.png" width="40" height="40"/>
-        <image name="items_s2" width="19" height="20"/>
-        <image name="more_s" width="22" height="6"/>
+        <image name="items" width="22" height="22"/>
+        <image name="more" width="22" height="6"/>
         <image name="muiscbutton_highlight.png" width="40" height="40"/>
-        <image name="muiscbutton_nomal.png" width="40" height="40"/>
+        <image name="muiscbutton_nomal" width="40" height="40"/>
         <image name="musicbutton_disable.png" width="40" height="40"/>
         <image name="timebutton_disable.png" width="40" height="40"/>
         <image name="timebutton_hightlight.png" width="40" height="40"/>
         <image name="timebutton_nomal.png" width="40" height="40"/>
-        <image name="timer_s" width="23" height="24"/>
+        <image name="timer29" width="22" height="22"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <color key="tintColor" red="0.10980392160000001" green="0.51764705879999995" blue="0.87450980389999999" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
 </document>

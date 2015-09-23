@@ -79,7 +79,9 @@
      UINavigationBar *bar = [UINavigationBar appearance];
     [bar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0]}];
-
+    UITabBar *tabBar = [UITabBar appearance];
+    [tabBar setTintColor:[UIColor colorWithRed:40/255.0 green:155/255.0 blue:232/255.0 alpha:1.0]];
+    
     
     noteCount = [application scheduledLocalNotifications].count;
     
