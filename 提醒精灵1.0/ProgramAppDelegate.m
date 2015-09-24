@@ -18,6 +18,7 @@
 #import "EventDataTool.h"
 #import "remainModel.h"
 #import "Reminder-Swift.h"
+@import CoreSpotlight;
 
 @interface ProgramAppDelegate ()<xAppDelegate>
 {
@@ -50,11 +51,8 @@
             activity.keywords =[[NSSet alloc]initWithArray:@[@"纪念日",@"事项提醒",@"倒计时",@"事务提醒"]];
             activity.eligibleForSearch = YES;
             activity.title = @"你的生活提醒助手";
-            
-            
-            self.userActivity = activity;
             activity.eligibleForHandoff = NO;
-            
+            self.userActivity = activity;
             [activity becomeCurrent];
             
         }
@@ -448,9 +446,19 @@
     [UIApplication sharedApplication].delegate.window.rootViewController = proVc; /// 这句话在其他VC也可以用
 }
 
+#pragma mark 索引处理
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
     
-    NSLog(@"continueUserActivity");
+    if ([userActivity.activityType isEqualToString:@"com.apple.corespotlightitem"]) {
+        NSString *indexId = userActivity.userInfo[CSSearchableItemActivityIdentifier];
+        
+        if (indexId.length<5) {
+            ProgramTabBarController *tabBar = (ProgramTabBarController *)self.window.rootViewController;
+            tabBar.selectedIndex = 1;
+        }
+
+    }
+    
     return YES;
     
 }

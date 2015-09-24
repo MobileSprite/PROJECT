@@ -155,16 +155,20 @@
 #pragma mark - addIndexWith CoreSpotlight API
 - (void) addIndexWith:(DateModel *)model AndDate:(NSDate *)date{
     CSSearchableItemAttributeSet *set = [[CSSearchableItemAttributeSet alloc]initWithItemContentType:@"text"];
-    NSString *content =  model.dateText;
-    NSString *dateString = model.date;
     NSString *ID = model.identity;
-    NSLog(@"%@--%@---%@",content,ID,date);
-    set.keywords = @[@"生日",@"假日",@"holiday",content];
+    NSString *content = nil;
+    //TODO: 处理过长的几点信息.
+    if (model.dateText.length > 20) {
+        
+       content = [[model.dateText substringToIndex:10] stringByAppendingString:@"..."];
+    }else {
+        content =  model.dateText;
+    }
     
     set.title = @"特殊的一天";
-    
-    //TODO: 处理过长的几点信息.
-    set.contentDescription = [NSString stringWithFormat:@"上一次打开时,距离%@FSDFSDFSDFFSDFSDFSDFSDFS还有%d天",content,(int)([NSDate dateCountWithTheDate:date]+1)];
+    set.keywords = @[@"生日",@"假日",content];
+
+    set.contentDescription = [NSString stringWithFormat:@"最近一次打开时,距离%@还有%d天",content,(int)([NSDate dateCountWithTheDate:date]+1)];
     
     CSSearchableItem *item = [[CSSearchableItem alloc]initWithUniqueIdentifier:ID domainIdentifier:@"DateCount" attributeSet:set];
     

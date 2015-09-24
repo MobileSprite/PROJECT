@@ -19,6 +19,8 @@
 #import "EventDataTool.h"
 #import "AccessTokenTool.h"
 
+@import CoreSpotlight;
+
 typedef enum timeInterval{
     onceTime = 1,
     everyday,
@@ -109,9 +111,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 @property (weak, nonatomic) IBOutlet UIButton *group;
 
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *bgView;
-
 @property(nonatomic,weak)altView *alterView;
+
+@property(nonatomic, copy)NSString *transDate;
 
 - (IBAction)clickTime;
 
@@ -604,6 +606,52 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     }
 }
 
+#pragma mark - addIndexWith CoreSpotlight API
+- (void) addIndexWith:(remainModel *)model AndDate:(NSDate *)date{
+    CSSearchableItemAttributeSet *set = [[CSSearchableItemAttributeSet alloc]initWithItemContentType:@"text"];
+    
+    NSDateFormatter *dateF = [[NSDateFormatter alloc]init];
+    dateF.dateFormat = DateFormatter;
+    
+    self.transDate = [dateF stringFromDate:model.date];
+
+    remainModel *moddd = model;
+    NSString *time = nil;
+    
+    switch (model.timesNum) {
+        case 0:
+            time = @"单次提醒";
+            break;
+        case 1:
+            time = @"每天提醒";
+            break;
+        case 2:
+            time = @"每周提醒";
+            break;
+        default:
+            break;
+    }
+    
+    NSString *content2 = [NSString stringWithFormat:@"(%@) %@:%@",time,self.transDate,model.text];
+    
+    set.title = [model.groupInfo stringByAppendingString:@"提醒"];
+    
+    set.keywords = @[@"生日",@"假日",model.groupInfo];
+    
+    set.contentDescription = content2;
+    
+    CSSearchableItem *item = [[CSSearchableItem alloc]initWithUniqueIdentifier:model.uniqueID domainIdentifier:@"EventCount" attributeSet:set];
+    
+    CSSearchableIndex *index = [CSSearchableIndex defaultSearchableIndex];
+    [index indexSearchableItems:@[item] completionHandler:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"%@",error);
+            return;
+        }
+    }];
+    
+}
+
 #pragma mark-RemainCellDelegate
 
 -(void)changedSwithInRemainCell:(remainCell *)cell
@@ -724,8 +772,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         
         NewremainModle = [remainModel remainModelWithDic:inputDic];
         
-        // NSLog(@"++%@++",NewremainModle);
-        
         for (remainModel * oldmodel in self.remaindArrays)
         {
             if ([NewremainModle.idenity isEqualToString:oldmodel.idenity])
@@ -750,6 +796,9 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         [_remaindArrays sortUsingDescriptors:sorterArray];
         
         //  [dicArray addObject:inputDic];
+        
+        [self addIndexWith:NewremainModle AndDate:nil];
+        
         
         [self addNoteWith:NewremainModle];
         
@@ -1153,11 +1202,11 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     NSDateFormatter *dateF = [[NSDateFormatter alloc]init];
     dateF.dateFormat = DateFormatter;
     
-    NSString *transDate = [dateF stringFromDate:remain.date];
+    self.transDate = [dateF stringFromDate:remain.date];
     
     cell.textView.text = remain.text;
     
-    cell.dateLabel.text = transDate;
+    cell.dateLabel.text = self.transDate;
     
     cell.musicLabel.text = [NSString stringWithFormat:@"%@",remain.music];
     
@@ -1352,19 +1401,19 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
             [self setEmptyView];
             
         }
-//        [self.remaindArrays removeObjectAtIndex:indexPath.row];
         
-//        [dicArray removeObjectAtIndex:indexPath.row];
+        [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithIdentifiers:@[deleteModel.uniqueID] completionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"indeError: %@ ",error);
+                return;
+            }
+        }];
         
         /**
          *  delete  datebase RECORD
          */
         
         [EventDataTool removeDBModel:deleteModel];
-        
-      //  NSIndexPath *index = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-//        NSArray *indexs = @[index];
-//        [tableView deleteRowsAtIndexPaths:indexs withRowAnimation:UITableViewRowAnimationLeft];
         
         [self.tabelView reloadData];
         
@@ -1380,7 +1429,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
             }
             
         }
-        
         
 //        [dicArray writeToFile:filePath atomically:YES];
         
@@ -2075,8 +2123,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     [sender removeFromSuperview];
     
 }
-
-
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {

@@ -25,6 +25,7 @@
 
 #import <MessageUI/MessageUI.h>
 
+@import CoreSpotlight;
 
 //#import "UMSocial.h"
 
@@ -424,6 +425,15 @@
 #pragma mark 删除当前账号的信息
         NSError *error;
         [[NSFileManager defaultManager]removeItemAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"] error:&error];
+
+        // 删除所有索引
+        [[CSSearchableIndex defaultSearchableIndex] deleteAllSearchableItemsWithCompletionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"%@", error);
+                return;
+            }
+        }];
+        
         
     }
     
