@@ -34,6 +34,8 @@
 
 @property(nonatomic,strong)NSArray *timesArray;
 
+@property(nonatomic,weak)IBOutlet UITextField *textField;
+@property(nonatomic, assign)BOOL isLoad;
 
 -(void)addSwipeLeft;
 -(void)addSwipeRight;

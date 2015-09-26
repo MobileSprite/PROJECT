@@ -7,6 +7,8 @@
 //
 
 #import "ProgramViewController.h"
+#import "ProgramTabBarController.h"
+
 #import "Define.h"
 #import "remainModel.h"
 #import "MusicModel.h"
@@ -14,10 +16,10 @@
 #import "altView.h"
 #import "MyAudioTool.h"
 #import "TimesModle.h"
-//#import "Menu.h"
 
 #import "EventDataTool.h"
 #import "AccessTokenTool.h"
+#import "Constants.h"
 
 @import CoreSpotlight;
 
@@ -97,7 +99,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 
 
-@property(nonatomic,weak)IBOutlet UITextField *textField;
 
 @property(nonatomic,weak)IBOutlet UIDatePicker *datePicker;
 
@@ -114,6 +115,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 @property(nonatomic,weak)altView *alterView;
 
 @property(nonatomic, copy)NSString *transDate;
+
 
 - (IBAction)clickTime;
 
@@ -134,10 +136,11 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 {
     [super viewDidLoad];
     
+
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEventReminder) name:RMWillHandleEventReminder object:nil];
+
     
     [self viewDidLoadState];
     
@@ -151,6 +154,10 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
     [self.tabelView reloadData];
     
     
+    if (self.isLoad) {
+        [self.textField becomeFirstResponder];
+        self.isLoad = NO;
+    }
     
 }
 
@@ -167,6 +174,7 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         [self setEmptyView];
         
     }
+    
 }
 
 - (void)setEmptyView {
@@ -538,6 +546,19 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 //    // NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
 //    
 //}
+
+#pragma mark - Noticafition Handle
+
+- (void)handleEventReminder {
+    
+    [UIApplication sharedApplication].delegate.window = nil;
+    
+    ProgramTabBarController *tabBarController = (ProgramTabBarController *)self.parentViewController.parentViewController;
+    [tabBarController setSelectedViewController:self.parentViewController];
+    
+    [self.textField becomeFirstResponder];
+    
+}
 
 #pragma mark - add&remove note
 
@@ -2127,6 +2148,12 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
+}
+
+#pragma MARK DEALLOC
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 }
 
 

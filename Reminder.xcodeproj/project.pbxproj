@@ -130,6 +130,7 @@
 		6034DC751BB05A4E00F52270 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC731BB05A4E00F52270 /* PageContentViewController.swift */; };
 		6034DC761BB05A4E00F52270 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034DC741BB05A4E00F52270 /* PageViewController.swift */; };
 		6045BF2E1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */; };
+		60DFCDFA1BB67EA9003C76FA /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFCDF91BB67EA9003C76FA /* Constants.m */; settings = {ASSET_TAGS = (); }; };
 		91BB4F5F1AD27AE4008A98CD /* app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91BB4F5E1AD27AE4008A98CD /* app.plist */; };
 		91C0AE0A1AD25068009AA6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C0AE091AD25068009AA6DC /* Images.xcassets */; };
 		91C851911ACAE70600D86758 /* AppCommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C8518A1ACAE70600D86758 /* AppCommend.m */; };
@@ -362,6 +363,8 @@
 		6034DC741BB05A4E00F52270 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DatePickerLabel.h"; sourceTree = "<group>"; };
 		6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DatePickerLabel.m"; sourceTree = "<group>"; };
+		60DFCDF81BB67EA9003C76FA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		60DFCDF91BB67EA9003C76FA /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		60FEFE161BB1A208006A7167 /* Reminder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Reminder-Bridging-Header.h"; path = "../Reminder-Bridging-Header.h"; sourceTree = "<group>"; };
 		91BB4F5E1AD27AE4008A98CD /* app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
 		91C0AE091AD25068009AA6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -414,6 +417,8 @@
 				5196051E19D2D4E90022B343 /* ProgramAppDelegate.m */,
 				6045BF2C1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.h */,
 				6045BF2D1BA31E4700B0FAC4 /* UILabel+DatePickerLabel.m */,
+				60DFCDF81BB67EA9003C76FA /* Constants.h */,
+				60DFCDF91BB67EA9003C76FA /* Constants.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -1228,6 +1233,7 @@
 				51EE1D0F1A41A27B00004F27 /* CircleprocessVie.m in Sources */,
 				517721ED1A878E1F006BBC67 /* UIProgressView+AFNetworking.m in Sources */,
 				517721E41A878E1F006BBC67 /* AFURLConnectionOperation.m in Sources */,
+				60DFCDFA1BB67EA9003C76FA /* Constants.m in Sources */,
 				51FAA4781AA2CF7000123FDE /* EventDataTool.m in Sources */,
 				51FAA46C1AA2CB5900123FDE /* altView.m in Sources */,
 				51FAA4691AA2CB5900123FDE /* MusicModel.m in Sources */,
@@ -1432,7 +1438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrcj12138;
 				PRODUCT_NAME = Reminder;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/Reminder-Bridging-Header.h";
@@ -1457,7 +1463,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_BUNDLE_IDENTIFIER = wrcj12138.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrcj12138;
 				PRODUCT_NAME = Reminder;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "提醒精灵1.0/Reminder-Bridging-Header.h";

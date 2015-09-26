@@ -31,6 +31,21 @@
 	</dict>
 	<key>NSUserActivityTypes</key>
 	<string>com.wrcj12138</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict/>
+			<key>name</key>
+			<string>提醒精灵</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypePlay</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>应用启动</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.wrcj12138</string>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

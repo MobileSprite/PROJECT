@@ -18,7 +18,9 @@
 #import "EventDataTool.h"
 #import "remainModel.h"
 #import "Reminder-Swift.h"
+#import "Constants.h"
 @import CoreSpotlight;
+
 
 @interface ProgramAppDelegate ()<xAppDelegate>
 {
@@ -30,20 +32,23 @@
     
 }
 
-
+@property (nonatomic, strong, readwrite) UIApplicationShortcutItem *launchItem;
 
 @end
 
 @implementation ProgramAppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    BOOL shouldPerformAdditionalDelegateHandling = YES;
     
     BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched2"];
     
     if (!hasLaunched) {
         
+#pragma mark- iOS9 新特性
         NSString *version = [[UIDevice currentDevice] systemVersion];
         if ([version doubleValue] >= 9.0) {
             NSUserActivity *activity = [[NSUserActivity alloc]initWithActivityType:@"com.wrcj12138"];
@@ -55,7 +60,20 @@
             self.userActivity = activity;
             [activity becomeCurrent];
             
+            
+            UIMutableApplicationShortcutItem *item1 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"eventReminder" localizedTitle:@"添加提醒"];
+            UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeCompose];
+            item1.icon = icon1;
+            item1.userInfo = @{@"use" : @"跳转到编辑界面",@"index": @0};
+            
+            UIMutableApplicationShortcutItem *item2 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"dateReminder" localizedTitle:@"添加日期"];
+            UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
+            item2.icon = icon2;
+            item2.userInfo = @{@"use" : @"跳转到添加界面", @"index": @1};
+            [UIApplication sharedApplication].shortcutItems = @[item1, item2];
+            
         }
+        
         
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
@@ -72,7 +90,12 @@
         
     [SwitchControllerTool chooseRootViewController];
     
-    
+    if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
+        
+        self.launchItem = (UIApplicationShortcutItem *)launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
+//        self.window = nil;
+        
+    }
     
      UINavigationBar *bar = [UINavigationBar appearance];
     [bar setTitleTextAttributes:
@@ -135,6 +158,7 @@
         }
     }
     
+    
     if ([[UIDevice currentDevice].systemVersion floatValue]>=8.0) {
         /*
          UIUserNotificationTypeNone    = 0,      不发出通知
@@ -147,7 +171,7 @@
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     }
 
-    return YES;
+    return shouldPerformAdditionalDelegateHandling;
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
@@ -295,6 +319,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+
     
     if (isAlert) {
         [self SetController];
@@ -322,9 +347,11 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    
-
-
+    if (self.launchItem != nil) {
+        
+//        self.window = nil;
+        [self applicationHandleItem:self.launchItem];
+    }
     
     if ([[NSFileManager defaultManager]fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"]])
     {
@@ -381,12 +408,9 @@
     
 }
 
+
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
-
-    
-
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -461,6 +485,48 @@
     
     return YES;
     
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    completionHandler([self applicationHandleItem:shortcutItem]);
+    
+}
+
+- (BOOL)applicationHandleItem:(UIApplicationShortcutItem *)item {
+    BOOL canHandle = NO;
+    NSInteger index = -1;
+    
+    ProgramTabBarController *tabVC = (ProgramTabBarController *) self.window.rootViewController;
+
+    if ([item.type isEqualToString:@"eventReminder"]) {
+        NSDictionary *dic = item.userInfo;
+        NSLog(@"%@",dic[@"use"]);
+        index = [dic[@"index"] integerValue];
+        tabVC.selectedIndex = index;
+        [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleEventReminder object:nil];
+        ProgramViewController *vc = (ProgramViewController *) tabVC.selectedViewController;
+        
+        vc.isLoad = YES;
+        
+        canHandle = YES;
+        
+    }
+    
+    if ([item.type isEqualToString:@"dateReminder"]) {
+        NSDictionary *dic = item.userInfo;
+        NSLog(@"%@",dic[@"use"]);
+        index = [dic[@"index"] integerValue];
+        tabVC.selectedIndex = index;
+        [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleDateReminder object:nil];
+        
+        canHandle = YES;
+        
+    }
+    
+
+    
+    return canHandle;
 }
 
 @end
