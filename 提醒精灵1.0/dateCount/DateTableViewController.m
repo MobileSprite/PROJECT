@@ -12,7 +12,7 @@
 #import "DateCell.h"
 #import "NSDate+DateCount.h"
 #import "ModelDataTool.h"
-
+#import "Constants.h"
 #import "FRDLivelyButton.h"
 
 #define fileName     [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"dateModels.archive"]
@@ -56,6 +56,16 @@
     
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    if (self = [super initWithCoder:aDecoder]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTouch) name:RMWillHandleDateReminder object:nil];
+    }
+    
+    return self;
+    
+}
+
 - (void)viewDidLoad
 {
 //    self.view.backgroundColor = [UIColor grayColor];
@@ -65,6 +75,25 @@
     [self setupHeadViewContent];
     
 }
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DateTouch"]) {
+        [self handleTouch];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"DateTouch"];
+        
+    }
+}
+
 
 -(void)setupHeadViewContent
 {
@@ -95,13 +124,6 @@
           kFRDLivelyButtonStyleChangeAnimationDuration: @(.3)
                                  }];
 
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    
 }
 
 - (void)setEmptyView {
@@ -271,7 +293,17 @@
     }   
 }
 
-
+- (void)handleTouch {
+    
+    AddDateViewController * addViewController = [[AddDateViewController alloc]init];
+    
+    [self presentViewController:addViewController animated:YES completion:^{
+        
+        addViewController.dateModels = self.dateArray;
+        
+        addViewController.delegate = self;
+        
+    }];}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -299,5 +331,9 @@
 }
 */
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
 @end

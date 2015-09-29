@@ -130,7 +130,16 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 @implementation ProgramViewController
 
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEventReminder) name:RMWillHandleEventReminder object:nil];
 
+    }
+    
+    return self;
+    
+}
 
 - (void)viewDidLoad
 {
@@ -139,37 +148,33 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 	// Do any additional setup after loading the view, typically from a nib.
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEventReminder) name:RMWillHandleEventReminder object:nil];
-
     
     [self viewDidLoadState];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor greenColor];
-    
-    // NSLog(@"%@", self.navigationController.navigationBar.tintColor);
     
     
     [self groupWithArray:self.remaindArrays];
     
     [self.tabelView reloadData];
     
-    
-    if (self.isLoad) {
-        [self.textField becomeFirstResponder];
-        self.isLoad = NO;
-    }
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"EventTouch"]) {
+        [self.textField becomeFirstResponder];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"EventTouch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+
     if (self.remaindArrays.count == 0) {
         [self setEmptyView];
         
@@ -534,32 +539,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 }
 
 
-
-
-//-(IBAction)clickReload:(UIButton *)sender
-//{
-//    
-//    [self.tabelView reloadData];
-//    
-//    // NSLog(@"%@",[UIApplication sharedApplication].scheduledLocalNotifications);
-//    
-//    // NSLog(@"%lu",(unsigned long)[UIApplication sharedApplication].scheduledLocalNotifications.count);
-//    
-//}
-
-#pragma mark - Noticafition Handle
-
-- (void)handleEventReminder {
-    
-    [UIApplication sharedApplication].delegate.window = nil;
-    
-    ProgramTabBarController *tabBarController = (ProgramTabBarController *)self.parentViewController.parentViewController;
-    [tabBarController setSelectedViewController:self.parentViewController];
-    
-    [self.textField becomeFirstResponder];
-    
-}
-
 #pragma mark - add&remove note
 
 -(void)removeNote:(id)sender
@@ -573,7 +552,6 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
 
 -(void)addNoteWith:(remainModel *)model
 {
-
         UILocalNotification *localNote = [[UILocalNotification alloc]init];
         
         localNote.timeZone = [NSTimeZone defaultTimeZone];
@@ -625,6 +603,15 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
         }
         
     }
+}
+
+#pragma mark - Noticafition Handle
+
+- (void)handleEventReminder {
+    
+    
+    [self.textField becomeFirstResponder];
+    
 }
 
 #pragma mark - addIndexWith CoreSpotlight API

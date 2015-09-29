@@ -51,6 +51,7 @@
 #pragma mark- iOS9 新特性
         NSString *version = [[UIDevice currentDevice] systemVersion];
         if ([version doubleValue] >= 9.0) {
+            
             NSUserActivity *activity = [[NSUserActivity alloc]initWithActivityType:@"com.wrcj12138"];
             
             activity.keywords =[[NSSet alloc]initWithArray:@[@"纪念日",@"事项提醒",@"倒计时",@"事务提醒"]];
@@ -93,7 +94,6 @@
     if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
         
         self.launchItem = (UIApplicationShortcutItem *)launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
-//        self.window = nil;
         
     }
     
@@ -349,8 +349,10 @@
 {
     if (self.launchItem != nil) {
         
-//        self.window = nil;
         [self applicationHandleItem:self.launchItem];
+        
+        self.launchItem = nil;
+        
     }
     
     if ([[NSFileManager defaultManager]fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"current_access_token.dat"]])
@@ -500,25 +502,41 @@
     ProgramTabBarController *tabVC = (ProgramTabBarController *) self.window.rootViewController;
 
     if ([item.type isEqualToString:@"eventReminder"]) {
+        
+        
+        if (self.launchItem) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"EventTouch"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        } else {
+            [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleEventReminder object:nil];
+        }
+
+        
         NSDictionary *dic = item.userInfo;
         NSLog(@"%@",dic[@"use"]);
         index = [dic[@"index"] integerValue];
         tabVC.selectedIndex = index;
-        [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleEventReminder object:nil];
-        ProgramViewController *vc = (ProgramViewController *) tabVC.selectedViewController;
-        
-        vc.isLoad = YES;
         
         canHandle = YES;
+
         
     }
     
     if ([item.type isEqualToString:@"dateReminder"]) {
+        
+        if (self.launchItem) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"DateTouch"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        } else {
+            [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleDateReminder object:nil];
+        }
+        
         NSDictionary *dic = item.userInfo;
         NSLog(@"%@",dic[@"use"]);
         index = [dic[@"index"] integerValue];
         tabVC.selectedIndex = index;
-        [[NSNotificationCenter defaultCenter]postNotificationName:RMWillHandleDateReminder object:nil];
         
         canHandle = YES;
         
