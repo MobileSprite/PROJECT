@@ -640,23 +640,28 @@ remainCellDelegate,alterViewDelegate,MFMailComposeViewControllerDelegate,MFMessa
             break;
     }
     
-    NSString *content2 = [NSString stringWithFormat:@"(%@) %@:%@",time,self.transDate,model.text];
-    
-    set.title = [model.groupInfo stringByAppendingString:@"提醒"];
-    
-    set.keywords = @[@"生日",@"假日",model.groupInfo];
-    
-    set.contentDescription = content2;
-    
-    CSSearchableItem *item = [[CSSearchableItem alloc]initWithUniqueIdentifier:model.uniqueID domainIdentifier:@"EventCount" attributeSet:set];
-    
-    CSSearchableIndex *index = [CSSearchableIndex defaultSearchableIndex];
-    [index indexSearchableItems:@[item] completionHandler:^(NSError * _Nullable error) {
-        if (error != nil) {
-            NSLog(@"%@",error);
-            return;
-        }
-    }];
+    NSString *version = [[UIDevice currentDevice] systemVersion];
+    if ([version doubleValue] >= 9.0) {
+        
+        NSString *content2 = [NSString stringWithFormat:@"(%@) %@:%@",time,self.transDate,model.text];
+        
+        set.title = [model.groupInfo stringByAppendingString:@"提醒"];
+        
+        set.keywords = @[@"生日",@"假日",model.groupInfo];
+        
+        set.contentDescription = content2;
+        
+        CSSearchableItem *item = [[CSSearchableItem alloc]initWithUniqueIdentifier:model.uniqueID domainIdentifier:@"EventCount" attributeSet:set];
+        
+        CSSearchableIndex *index = [CSSearchableIndex defaultSearchableIndex];
+        [index indexSearchableItems:@[item] completionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"%@",error);
+                return;
+            }
+        }];
+    }
+
     
 }
 

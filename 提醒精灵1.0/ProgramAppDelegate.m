@@ -91,11 +91,16 @@
         
     [SwitchControllerTool chooseRootViewController];
     
-    if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
-        
-        self.launchItem = (UIApplicationShortcutItem *)launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
-        
+    NSString *version = [[UIDevice currentDevice] systemVersion];
+    if ([version doubleValue] >= 9.0) {
+        if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
+            
+            self.launchItem = (UIApplicationShortcutItem *)launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
+            
+        }
     }
+    
+
     
      UINavigationBar *bar = [UINavigationBar appearance];
     [bar setTitleTextAttributes:
