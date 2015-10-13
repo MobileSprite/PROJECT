@@ -100,23 +100,15 @@
 {
     SettingItem *item1_0 = [SettingItem setupWithIcon:@"contacts" Title:@"应用评分"];
 
-//    item1_0.icon
     
     item1_0.option = ^{
         
         NSLog(@"应用评分");
         
-        /*
+         NSString *str = @"https://itunes.apple.com/us/app/reminder-ni-ti-xing-jing-ling/id1048869519?l=zh&ls=1&mt=8";
+
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         
-        int m_appleID = 0;
-        
-        NSString *str = [NSString stringWithFormat:
-                         @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple Software&id=%d",
-                         
-                         m_appleID ];
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-         */
         
         
         
@@ -129,8 +121,7 @@
         /**
          *  send e-mail;
          */
-
-        
+      
         
         NSString *myText = @"感谢您给予宝贵的意见，会及时答复:";
         
@@ -181,7 +172,7 @@
     
     SettingGroup *group_1 = [[SettingGroup alloc]init];
     
-    group_1.headerTitle = @"欢迎,^_^";
+    group_1.headerTitle = @"欢迎,使用";
 
     group_1.items = @[item1_0,item1_1];
     
@@ -427,27 +418,23 @@
         // 删除所有索引
         [[CSSearchableIndex defaultSearchableIndex] deleteAllSearchableItemsWithCompletionHandler:^(NSError * _Nullable error) {
             if (error != nil) {
-                NSLog(@"%@", error);
                 return;
             }
         }];
         
         BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched2"];
-        
+      
+      
+      
+      if([UIDevice currentDevice].systemVersion.doubleValue >= 9.0) {
         [UIApplication sharedApplication].shortcutItems = nil;
-        
+
+      }
+      
         
     }
     
 }
 
-
-#pragma mark 分享组件代理
-
-//-(void)didFinishGetUMSocialDataResponse:(UMSocialResponseEntity *)response
-//{
-//    NSLog(@"---");
-//    
-//}
 
 @end

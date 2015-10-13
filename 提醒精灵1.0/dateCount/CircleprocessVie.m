@@ -73,9 +73,7 @@
 -(void)setTrackColor:(UIColor *)trackColor
 {
     
-    
-    
-    _trackLayer.strokeColor =trackColor.CGColor;
+  _trackLayer.strokeColor =trackColor.CGColor;
     
     
 }

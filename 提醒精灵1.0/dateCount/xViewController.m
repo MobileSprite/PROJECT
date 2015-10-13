@@ -62,6 +62,23 @@
 
 }
 
+- (void)viewDidLayoutSubviews {
+  [super viewDidLayoutSubviews];
+  
+  self.edgesForExtendedLayout = UIRectEdgeNone;
+  
+  if(CGRectGetHeight([UIScreen mainScreen].bounds) <= 480) {
+    
+    CGRect tempRect  = self.DatePicker.frame;
+    tempRect.origin = CGPointMake(tempRect.origin.x, tempRect.origin.y - 8);
+    self.DatePicker.frame = tempRect;
+    
+  }
+}
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+}
 
 
 
@@ -95,9 +112,6 @@
 
 -(void)tiemFireMethod
 {
-    
-    
-    
  
     _totlaTime -=1;
     hour =_totlaTime/60/60;
@@ -205,7 +219,6 @@
     _totlaTime =_timerLable.tag;
     _timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tiemFireMethod) userInfo:nil repeats:YES];
   
-    
 }
 
 //
@@ -222,7 +235,7 @@
     self.notification.repeatInterval=0;
    self.notification.alertBody=@"计时已到，请查看。";
     
-    self.notification.alertAction=NSLocalizedString(@"LOCKED AO!!", nil);
+    self.notification.alertAction=NSLocalizedString(@"知道了", nil);
         
     self.notification.soundName =@"10000.caf";
         
@@ -249,12 +262,10 @@
 -(void) drawRound
 {
     
-
     UIBezierPath *path = [UIBezierPath bezierPath];
     
     CGRect rect = _arcBgView.frame;
-    
-    
+  
     [path addArcWithCenter:CGPointMake(rect.size.width/2,(rect.size.height)/2) radius:80 startAngle:0 endAngle:2*M_PI clockwise:NO];
     
     _arcLayer=[CAShapeLayer layer];
@@ -265,7 +276,7 @@
     _arcLayer.fillColor=[UIColor colorWithRed:40.0/255.0 green:170.0/255.0 blue:240.0/255.0 alpha:1].CGColor;
     _arcLayer.strokeColor=[UIColor colorWithWhite:1 alpha:0.7].CGColor;
     _arcLayer.lineWidth=15;
-    _arcLayer.frame=self.view.frame;
+//    _arcLayer.frame=self.view.frame;
     [_arcBgView.layer addSublayer:_arcLayer];
 
 }
@@ -275,15 +286,14 @@
 -(void)progressCirclie :(CGFloat)totaltime;
 {
     
-
     progress =[[ CircleprocessVie alloc] initWithFrame:CGRectMake(0,0, 176, 144)];
+  
 
-    
     progress.trackColor=[UIColor colorWithWhite:1 alpha:0.5];
     progress.progressColor =[UIColor colorWithRed:46.0/255.0 green:169.0/255.0 blue:230.0/255.0 alpha:1];
     
     progress.progress=1-totaltime/_startBtn.tag;
-    NSLog(@"%f",progress.progress);
+  
     progress.progressWidth=5;
     
     [_arcBgView addSubview:progress];

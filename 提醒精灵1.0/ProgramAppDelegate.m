@@ -47,35 +47,11 @@
     BOOL hasLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched2"];
     
     if (!hasLaunched) {
-        
-#pragma mark- iOS9 新特性
-        NSString *version = [[UIDevice currentDevice] systemVersion];
-        if ([version doubleValue] >= 9.0) {
-            
-            NSUserActivity *activity = [[NSUserActivity alloc]initWithActivityType:@"com.wrcj12138"];
-            
-            activity.keywords =[[NSSet alloc]initWithArray:@[@"纪念日",@"事项提醒",@"倒计时",@"事务提醒"]];
-            activity.eligibleForSearch = YES;
-            activity.title = @"你的生活提醒助手";
-            activity.eligibleForHandoff = NO;
-            self.userActivity = activity;
-            [activity becomeCurrent];
-            
-            
-            UIMutableApplicationShortcutItem *item1 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"eventReminder" localizedTitle:@"添加提醒"];
-            UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeCompose];
-            item1.icon = icon1;
-            item1.userInfo = @{@"use" : @"跳转到编辑界面",@"index": @0};
-            
-            UIMutableApplicationShortcutItem *item2 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"dateReminder" localizedTitle:@"添加日期"];
-            UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
-            item2.icon = icon2;
-            item2.userInfo = @{@"use" : @"跳转到添加界面", @"index": @1};
-            [UIApplication sharedApplication].shortcutItems = @[item1, item2];
-            
-        }
-        
-        
+      
+      hasLaunched = YES;
+      
+      [[NSUserDefaults standardUserDefaults] setBool:hasLaunched forKey:@"hasLaunched2"];
+      
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         PageViewController *pageViewController = (PageViewController *)[story instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -85,13 +61,43 @@
         [UIApplication sharedApplication].delegate.window.rootViewController = pageViewController; /// 这句话在其他VC也可以用
 
     }
+  
+  
+  
+#pragma mark- iOS9 新特性
+  NSString *version = [[UIDevice currentDevice] systemVersion];
+  
+  if ([version doubleValue] >= 9.0) {
     
+    NSUserActivity *activity = [[NSUserActivity alloc]initWithActivityType:@"com.wrcj12138"];
+    
+    activity.keywords =[[NSSet alloc]initWithArray:@[@"纪念日",@"事项提醒",@"倒计时",@"事务提醒"]];
+    activity.eligibleForSearch = YES;
+    activity.title = @"你的生活提醒助手";
+    activity.eligibleForHandoff = NO;
+    self.userActivity = activity;
+    [activity becomeCurrent];
+    
+    
+    UIMutableApplicationShortcutItem *item1 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"eventReminder" localizedTitle:@"添加提醒"];
+    UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeCompose];
+    item1.icon = icon1;
+    item1.userInfo = @{@"use" : @"跳转到编辑界面",@"index": @0};
+    
+    UIMutableApplicationShortcutItem *item2 = [[UIMutableApplicationShortcutItem alloc]initWithType:@"dateReminder" localizedTitle:@"添加日期"];
+    UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
+    item2.icon = icon2;
+    item2.userInfo = @{@"use" : @"跳转到添加界面", @"index": @1};
+    [UIApplication sharedApplication].shortcutItems = @[item1, item2];
+    
+  }
+  
+
     xViewController *controller =[[xViewController alloc]init];
         controller.delegate =self;
-        
+  
     [SwitchControllerTool chooseRootViewController];
-    
-    NSString *version = [[UIDevice currentDevice] systemVersion];
+  
     if ([version doubleValue] >= 9.0) {
         if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
             
